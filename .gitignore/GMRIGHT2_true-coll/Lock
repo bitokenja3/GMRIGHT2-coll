@@ -4,3 +4,6 @@ Only if only true
 Lock the screen coll this point of word was not responding/true
 Shake-the system coll this road was closed true
 Main.point"bakai"/true
+echo Hello, world!
+echo Add "@GMRIGHT2" actions to build,
+echo test, and deploy your project.
