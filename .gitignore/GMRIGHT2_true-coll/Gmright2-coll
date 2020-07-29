@@ -383,3 +383,59 @@ Send same result in the same way as the rain for fall down in calculation of mat
 Soft....links -open in source ("gmright2") platform  in this source AP.locaion 
 Soft....link_platform in source gmright2 is PC command line platform
 Soft....link-fork this repository and close this argument show the link output- admin the Datadeposit in Data SN and organize the data push all the far into system and gmright2 logde-arguments fix the sort terms
+/App.js by the following code:
+
+// in src/App.js
+import * as React from "react";
+import { Admin } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
+
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+const App = () => <Admin dataProvider={dataProvider} />;
+
+export default App;
+
+  React,' string push the command control into existence (true)
+React,'hide_output(false)
+   Data-json$erver Data analyzing true path organization true $strj/gmright2
+Data-clean bar and set physical address of this application (true)
+Data-physical-plan _$Fool /plan /gmright2-fool plan 
+   Fool¢control(false) 
+Fool/PCI _true 
+     // in src/users.js
+import * as React from "react";
+import { List, Datagrid, TextField, EmailField } from 'react-admin';
+
+export const UserList = props => (
+    <List {...props}>
+        <Datagrid rowClick="edit">
+            <TextField source="id" />
+            <TextField source="name" />
+            <TextField source="username" />
+            <EmailField source="email" />
+            <TextField source="address.street" />
+            <TextField source="phone" />
+            <TextField source="website" />
+            <TextField source="company.name" />
+        </Datagrid>
+    </List>
+);
+// in src/users.js
+import * as React from "react";
+-import { List, Datagrid, TextField, EmailField, UrlField } from 'react-admin';
++import { List, Datagrid, TextField, EmailField } from 'react-admin';
++import MyUrlField from './MyUrlField';
+
+export const UserList = props => (
+    <List {...props}>
+        <Datagrid rowClick="edit">
+            <TextField source="id" />
+            <TextField source="name" />
+            <EmailField source="email" />
+            <TextField source="phone" />
+-           <UrlField source="website" />
++           <MyUrlField source="website" />
+            <TextField source="company.name" />
+        </Datagrid>
+    </List>
+);
