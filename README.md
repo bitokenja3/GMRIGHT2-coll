@@ -55,3 +55,6 @@ If [✓]  open this location
 Run {output-powershel}
 Allow-user to start writing [a.b=cB/b.a=blog] this is in powershell in gmright2 logde-arguments fix
 Allow this application to run in pro command
+/=============|.           /==========/\
+|=============| Index.doc |==========/\%
+|=============|.          |=========/\% slideshow markdown box open the attachment.of this "master.applications and the other Max
