@@ -78,6 +78,9 @@ commitment to quality, but also with the hopes that you will contribute back to
 help keep it stable. The easiest way to do so is to file bugs and include a
 test case.
 
+![D03E714A-310E-432C-A867-47C8EAB4F10B](https://user-images.githubusercontent.com/67715829/89128517-be9aa480-d4bb-11ea-9265-eb55a8c29934.jpeg)
+
+
 The tests can be executed by using this command from the base directory:
 
     phpunit --stderr --bootstrap tests/bootstrap.php tests/tests.php
