@@ -13,7 +13,7 @@ In remote service server user is able to automatically connect and start jobs in
 * build software strong with security system command from gmright2 100% strong 
 git clone https://system453@bitbucket.org/system453/gmright2.git
 
-![a2a20032-f3ea-4248-8dd3-d3f079488503](https://user-images.githubusercontent.com/67715829/89128588-526c7080-d4bc-11ea-84dd-90761d40ced0.png)
+                                                                                           ![a2a20032-f3ea-4248-8dd3-d3f079488503](https://user-images.githubusercontent.com/67715829/89128588-526c7080-d4bc-11ea-84dd-90761d40ced0.png)
 
 
 
