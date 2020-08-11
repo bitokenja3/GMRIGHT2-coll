@@ -408,6 +408,24 @@ const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
 const App = () => <Admin dataProvider={dataProvider} />;
 
 export default App;
+With Composer:
+
+- Add the `"gmright/php-sdk": "@stable"` into the `require` section of your `composer.json`.
+- Run `composer install`.
+- The example will look like
+
+```php
+if (($loader = require_once __DIR__ . '/vendor/autoload.php') == null)  {
+  die('Vendor directory not found, Please run composer install.');
+}
+
+$GMRIGHT = new gmright(array(
+  'appId'  => 'YOUR_APP_ID',
+  'secret' => 'YOUR_APP_SECRET',
+));
+
+// Get User ID
+$user = $gmright->getUser();
 
   React,' string push the command control into existence (true)
 React,'hide_output(false)
