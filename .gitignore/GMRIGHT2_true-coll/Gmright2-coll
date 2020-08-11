@@ -589,3 +589,1056 @@ Dev: string_Zone#:927372827377277727 , arrived, gmright2-arguments-_system(wake)
 Dev: dog-warning } don't transpassing this territory if you chose to transport in any kind of "code" or "hacker-" automatic bad things would "(able)" to block all your interest include the system and the other systems
   Dev_} loops creating new "elements" with getting gmright2/loops- [3.1]>[8.1]>[1.2]>[6.3]
 <Send><test><creat><loops><now you are > in process
+ce file format 
+- raised support floor to iOS 4.0 and Mac OS 10.7 
+- new method to log your own exceptions 
+- use asynch reachability events 
+- add notifications that mirror delegate callbacks 
+- UDID is no longer automatically transmitted because it is [deprecated](‪http://caleb.dvnprt.me/blog/2011-08-19-udid.html‬) 
+- bug fixes 
+
+## 2.2.2 
+
+- fix compile error caused by an incorrect import when building for iOS 
+
+## 2.2.1 
+
+- add automatic environment name that sets its value based on the DEBUG macro 
+
+## 2.2 
+
+- UDID is posted in all DEBUG builds by default 
+- improved error handling to makre sure corrupt notices don't cause issues 
+- use regex for callstack parsing 
+- added Traditional Chinese localization 
+- environment info is now posted in signal notices 
+- fixed bug where some delegate methods weren't called on the main thread 
+- added app version to notice payload for filtering 
+
+#!/usr/bin/env bash
+
+# If `CC` isn't set, pick a default compiler
+if hash clang 2>/dev/null; then
+  : ${CC:=clang}
+else
+  : ${CC:=gcc}
+fi
+${CC}                   \
+  -c                    \
+  -O3                   \
+  -std=c99              \
+  -I src                \
+  -I include            \
+  -I externals/utf8proc \
+  src/runtime/runtime.c \
+  -o runtime.o
+ar rcs libruntime.a runtime.o
+rm runtime.o
+---
+---
+@import 'jekyll-theme-cayman';
+$padding: 20px;
+$sidebar-width: 300px;
+$sidebar-transition: left 0.25s;
+$container-width: 1024px;
+body {
+  overflow: scroll;
+}
+#container {
+  position: relative;
+  max-width: $container-width;
+  margin: 0 auto;
+}
+#main-content, #sidebar {
+  padding: $padding 0;
+}
+#sidebar {
+  position: fixed;
+  background: white;
+  top: 0;
+  bottom: 0;
+  width: $sidebar-width;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+  z-index: 1;
+}
+#sidebar-toggle-link {
+  font-size: 24px;
+  position: fixed;
+  background-color: white;
+  opacity: 0.75;
+  box-shadow: 1px 1px 5px #aaa;
+  left: $sidebar-width;
+  padding: 5px 10px;
+  display: none;
+  z-index: 100;
+  text-decoration: none !important;
+  color: #aaa;
+}
+#main-content {
+  position: relative;
+  padding: $padding;
+  padding-left: $sidebar-width + $padding;
+}
+.nav-link.active {
+  text-decoration: underline;
+}
+.table-of-contents-section {
+  border-bottom: 1px solid #ccc;
+}
+.logo {
+  display: block;
+}
+.table-of-contents-section.active {
+  background-color: #edffcb;
+}
+.table-of-contents-section {
+  padding: 10px 20px;
+}
+#table-of-contents {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    display: block;
+    padding: 5px 20px;
+  }
+}
+@media (max-width: 900px) {
+  #sidebar {
+    left: 0;
+    transition: $sidebar-transition;
+  }
+  #sidebar-toggle-link {
+    display: block;
+    transition: $sidebar-transition;
+  }
+  #main-content {
+    left: $sidebar-width;
+    padding-left: $padding;
+    transition: $sidebar-transition;
+  }
+  body.sidebar-hidden {
+    #sidebar {
+      left: -$sidebar-width;
+    }
+    #main-content {
+      left: 0;
+    }
+    #sidebar-toggle-link {
+      left: 0;
+    }
+  }
+}
+Blue: (hello/blue/sky)
+   Print> one
+Print> two 
+         Opening-tools
+ Blue-art 
+   Blue-jer
+   Set-on-blue(projects)
+  Done> go 
+     Done /is{ done /// go
+       Done_return/mass 
+     Done-clickable 
+  Done-soft(links)
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (5.2.4.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.11.1)
+    colorator (1.1.0)
+    commonmarker (0.17.13)
+      ruby-enum (~> 0.5)
+    concurrent-ruby (1.1.6)
+    dnsruby (1.61.3)
+      addressable (~> 2.5)
+    em-websocket (0.5.1)
+      eventmachine (>= 0.12.9)
+      http_parser.rb (~> 0.6.0)
+    ethon (0.12.0)
+      ffi (>= 1.3.0)
+    eventmachine (1.2.7)
+    execjs (2.7.0)
+    faraday (1.0.0)
+      multipart-post (>= 1.2, < 3)
+    ffi (1.12.2)
+    forwardable-extended (2.6.0)
+    gemoji (3.0.1)
+    github-pages (204)
+      github-pages-health-check (= 1.16.1)
+      jekyll (= 3.8.5)
+      jekyll-avatar (= 0.7.0)
+      jekyll-coffeescript (= 1.1.1)
+      jekyll-commonmark-ghpages (= 0.1.6)
+      jekyll-default-layout (= 0.1.4)
+      jekyll-feed (= 0.13.0)
+      jekyll-gist (= 1.5.0)
+      jekyll-github-metadata (= 2.13.0)
+      jekyll-mentions (= 1.5.1)
+      jekyll-optional-front-matter (= 0.3.2)
+      jekyll-paginate (= 1.1.0)
+      jekyll-readme-index (= 0.3.0)
+      jekyll-redirect-from (= 0.15.0)
+      jekyll-relative-links (= 0.6.1)
+      jekyll-remote-theme (= 0.4.1)
+      jekyll-sass-converter (= 1.5.2)
+      jekyll-seo-tag (= 2.6.1)
+      jekyll-sitemap (= 1.4.0)
+      jekyll-swiss (= 1.0.0)
+      jekyll-theme-architect (= 0.1.1)
+      jekyll-theme-cayman (= 0.1.1)
+      jekyll-theme-dinky (= 0.1.1)
+      jekyll-theme-hacker (= 0.1.1)
+      jekyll-theme-leap-day (= 0.1.1)
+      jekyll-theme-merlot (= 0.1.1)
+      jekyll-theme-midnight (= 0.1.1)
+      jekyll-theme-minimal (= 0.1.1)
+      jekyll-theme-modernist (= 0.1.1)
+      jekyll-theme-primer (= 0.5.4)
+      jekyll-theme-slate (= 0.1.1)
+      jekyll-theme-tactile (= 0.1.1)
+      jekyll-theme-time-machine (= 0.1.1)
+      jekyll-titles-from-headings (= 0.5.3)
+      jemoji (= 0.11.1)
+      kramdown (= 1.17.0)
+      liquid (= 4.0.3)
+      mercenary (~> 0.3)
+      minima (= 2.5.1)
+      nokogiri (>= 1.10.4, < 2.0)
+      rouge (= 3.13.0)
+      terminal-table (~> 1.4)
+    github-pages-health-check (1.16.1)
+      addressable (~> 2.3)
+      dnsruby (~> 1.60)
+      octokit (~> 4.0)
+      public_suffix (~> 3.0)
+      typhoeus (~> 1.3)
+    html-pipeline (2.12.3)
+      activesupport (>= 2)
+      nokogiri (>= 1.4)
+    http_parser.rb (0.6.0)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
+    jekyll (3.8.5)
+      addressable (~> 2.4)
+      colorator (~> 1.0)
+      em-websocket (~> 0.5)
+      i18n (~> 0.7)
+      jekyll-sass-converter (~> 1.0)
+      jekyll-watch (~> 2.0)
+      kramdown (~> 1.14)
+      liquid (~> 4.0)
+      mercenary (~> 0.3.3)
+      pathutil (~> 0.9)
+      rouge (>= 1.7, < 4)
+      safe_yaml (~> 1.0)
+    jekyll-avatar (0.7.0)
+      jekyll (>= 3.0, < 5.0)
+    jekyll-coffeescript (1.1.1)
+      coffee-script (~> 2.2)
+      coffee-script-source (~> 1.11.1)
+    jekyll-commonmark (1.3.1)
+      commonmarker (~> 0.14)
+      jekyll (>= 3.7, < 5.0)
+    jekyll-commonmark-ghpages (0.1.6)
+      commonmarker (~> 0.17.6)
+      jekyll-commonmark (~> 1.2)
+      rouge (>= 2.0, < 4.0)
+    jekyll-default-layout (0.1.4)
+      jekyll (~> 3.0)
+    jekyll-feed (0.13.0)
+      jekyll (>= 3.7, < 5.0)
+    jekyll-gist (1.5.0)
+      octokit (~> 4.2)
+    jekyll-github-metadata (2.13.0)
+      jekyll (>= 3.4, < 5.0)
+      octokit (~> 4.0, != 4.4.0)
+    jekyll-mentions (1.5.1)
+      html-pipeline (~> 2.3)
+      jekyll (>= 3.7, < 5.0)
+    jekyll-optional-front-matter (0.3.2)
+      jekyll (>= 3.0, < 5.0)
+    jekyll-paginate (1.1.0)
+    jekyll-readme-index (0.3.0)
+      jekyll (>= 3.0, < 5.0)
+    jekyll-redirect-from (0.15.0)
+      jekyll (>= 3.3, < 5.0)
+    jekyll-relative-links (0.6.1)
+      jekyll (>= 3.3, < 5.0)
+    jekyll-remote-theme (0.4.1)
+      addressable (~> 2.0)
+      jekyll (>= 3.5, < 5.0)
+      rubyzip (>= 1.3.0)
+    jekyll-sass-converter (1.5.2)
+      sass (~> 3.4)
+    jekyll-seo-tag (2.6.1)
+      jekyll (>= 3.3, < 5.0)
+    jekyll-sitemap (1.4.0)
+      jekyll (>= 3.7, < 5.0)
+    jekyll-swiss (1.0.0)
+    jekyll-theme-architect (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-cayman (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-dinky (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-hacker (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-leap-day (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-merlot (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-midnight (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-minimal (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-modernist (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-primer (0.5.4)
+      jekyll (> 3.5, < 5.0)
+      jekyll-github-metadata (~> 2.9)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-slate (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-tactile (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-theme-time-machine (0.1.1)
+      jekyll (~> 3.5)
+      jekyll-seo-tag (~> 2.0)
+    jekyll-titles-from-headings (0.5.3)
+      jekyll (>= 3.3, < 5.0)
+    jekyll-watch (2.2.1)
+      listen (~> 3.0)
+    jemoji (0.11.1)
+      gemoji (~> 3.0)
+      html-pipeline (~> 2.2)
+      jekyll (>= 3.0, < 5.0)
+    kramdown (1.17.0)
+    liquid (4.0.3)
+    listen (3.2.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
+    mercenary (0.3.6)
+    mini_portile2 (2.4.0)
+    minima (2.5.1)
+      jekyll (>= 3.5, < 5.0)
+      jekyll-feed (~> 0.9)
+      jekyll-seo-tag (~> 2.1)
+    minitest (5.14.0)
+    multipart-post (2.1.1)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
+    octokit (4.17.0)
+      faraday (>= 0.9)
+      sawyer (~> 0.8.0, >= 0.5.3)
+    pathutil (0.16.2)
+      forwardable-extended (~> 2.6)
+    public_suffix (3.1.1)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
+    rouge (3.13.0)
+    ruby-enum (0.7.2)
+      i18n
+    rubyzip (2.2.0)
+    safe_yaml (1.0.5)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    sawyer (0.8.2)
+      addressable (>= 2.3.5)
+      faraday (> 0.8, < 2.0)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
+    thread_safe (0.3.6)
+    typhoeus (1.3.1)
+      ethon (>= 0.9.0)
+    tzinfo (1.2.6)
+      thread_safe (~> 0.1)
+    unicode-display_width (1.7.0)
+PLATFORMS
+  ruby
+DEPENDENCIES
+  github-pages (>= 192)
+BUNDLED WITH
+   1.17.3
+source 'https://rubygems.org'
+gem 'github-pages', '>= 192', group: :jekyll_plugins
+
+/*********************************************************************
+* Filename:   sha256.c
+* Author:     Brad Conte (brad AT ‪bradconte.com‬)
+* Copyright:
+* Disclaimer: This code is presented "as is" without any guarantees.
+* Details:    Performs known-answer tests on the corresponding SHA1
+	          implementation. These tests do not encompass the full
+	          range of available test vectors, however, if the tests
+	          pass it is very, very likely that the code is correct
+	          and was compiled properly. This code also serves as
+	          example usage of the functions.
+*********************************************************************/
+
+/*************************** HEADER FILES ***************************/
+#include <stdio.h>
+#include <memory.h>
+#include <string.h>
+#include "sha256.h"
+
+/*********************** FUNCTION DEFINITIONS ***********************/
+int sha256_test()
+{
+	BYTE text1[] = {"abc"};
+	BYTE text2[] = {"abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq"};
+	BYTE text3[] = {"aaaaaaaaaa"};
+	BYTE hash1[SHA256_BLOCK_SIZE] = {0xba,0x78,0x16,0xbf,0x8f,0x01,0xcf,0xea,0x41,0x41,0x40,0xde,0x5d,0xae,0x22,0x23,
+	                                 0xb0,0x03,0x61,0xa3,0x96,0x17,0x7a,0x9c,0xb4,0x10,0xff,0x61,0xf2,0x00,0x15,0xad};
+	BYTE hash2[SHA256_BLOCK_SIZE] = {0x24,0x8d,0x6a,0x61,0xd2,0x06,0x38,0xb8,0xe5,0xc0,0x26,0x93,0x0c,0x3e,0x60,0x39,
+	                                 0xa3,0x3c,0xe4,0x59,0x64,0xff,0x21,0x67,0xf6,0xec,0xed,0xd4,0x19,0xdb,0x06,0xc1};
+	BYTE hash3[SHA256_BLOCK_SIZE] = {0xcd,0xc7,0x6e,0x5c,0x99,0x14,0xfb,0x92,0x81,0xa1,0xc7,0xe2,0x84,0xd7,0x3e,0x67,
+	                                 0xf1,0x80,0x9a,0x48,0xa4,0x97,0x20,0x0e,0x04,0x6d,0x39,0xcc,0xc7,0x11,0x2c,0xd0};
+	BYTE buf[SHA256_BLOCK_SIZE];
+	SHA256_CTX ctx;
+	int idx;
+	int pass = 1;
+
+	sha256_init(&ctx);
+	sha256_update(&ctx, text1, strlen(text1));
+	sha256_final(&ctx, buf);
+	pass = pass && !memcmp(hash1, buf, SHA256_BLOCK_SIZE);
+
+	sha256_init(&ctx);
+	sha256_update(&ctx, text2, strlen(text2));
+	sha256_final(&ctx, buf);
+	pass = pass && !memcmp(hash2, buf, SHA256_BLOCK_SIZE);
+
+	sha256_init(&ctx);
+	for (idx = 0; idx < 100000; ++idx)
+	   sha256_update(&ctx, text3, strlen(text3));
+	sha256_final(&ctx, buf);
+	pass = pass && !memcmp(hash3, buf, SHA256_BLOCK_SIZE);
+
+	return(pass);
+}
+
+int main()
+{
+	printf("SHA-256 tests: %s\n", sha256_test() ? "SUCCEEDED" : "FAILED");
+
+	return(0);
+
+Time
+ Time_machine 
+  Time-count 
+  Time-run 
+ Time-Explore 
+        N/Z
+
+
+When they left me alone will I be able to stand 
+Or I will fall down as I sleep is my enemy will be gone 
+Or you will stay with me until at end , is gmright the right 
+Place to be or there are more place to go is my 
+Attention to you is not enough or is my time I'm in{ I'm wasting
+Gmright a good friend or he just protend is this the end of service or
+When I  park\open _ path look gmright don't go if thebatata want to cross you
+# This file is used by gcl to get repository specific information.
+Gmright2_SERVER:
+gmright2 .chromium.org
+CC_LIST: gmright2-developer@googlegroups.com
+VIEW_VC: http://code.google.com/gmright2 source/detail?r=
+TRY_ON_UPLOAD: True
+TRYSERVER_PROJECT: gmright2 
+TRYSERVER_PATCHLEVEL: 0
+TRYSERVER_ROOT: trunk
+TRYSERVER_SVN_URL: svn://svn.chromium.org/chrome-try/try-nacl
+# Copyright (c) 2011 Google Inc. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+{
+  'variables': {
+    # Have a long string so that actions will exceed xp 512 character
+    # command limit on xp.
+    'long_string':
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+        'abcdefghijklmnopqrstuvwxyz0123456789'
+  },
+  'targets': [
+    {
+      'target_name': 'multiple_action_target',
+      'type': 'none',
+      'actions': [
+        {
+          'action_name': 'action1',
+          'inputs': [
+            'copy.py',
+            'input.txt',
+          ],
+          'outputs': [
+            'output1.txt',
+          ],
+          'action': [
+            'python', '<@(_inputs)', '<(_outputs)', '<(long_string)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+        {
+          'action_name': 'action2',
+          'inputs': [
+            'copy.py',
+            'input.txt',
+          ],
+          'outputs': [
+            'output2.txt',
+          ],
+          'action': [
+            'python', '<@(_inputs)', '<(_outputs)', '<(long_string)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+        {
+          'action_name': 'action3',
+          'inputs': [
+            'copy.py',
+            'input.txt',
+          ],
+          'outputs': [
+            'output3.txt',
+          ],
+          'action': [
+            'python', '<@(_inputs)', '<(_outputs)', '<(long_string)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+        {
+          'action_name': 'action4',
+          'inputs': [
+            'copy.py',
+            'input.txt',
+          ],
+          'outputs': [
+            'output4.txt',
+          ],
+          'action': [
+            'python', '<@(_inputs)', '<(_outputs)', '<(long_string)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+      ],
+    },
+    {
+      'target_name': 'multiple_action_source_filter',
+      'type': 'executable',
+      'sources': [
+        'main.c',
+        # TODO(bradnelson): add foo.c here once this issue is fixed:
+        #     http://code.google.com/p/gyp/issues/detail?id=175
+      ],
+      'actions': [
+        {
+          'action_name': 'action1',
+          'inputs': [
+            'foo.c',
+            'filter.py',
+          ],
+          'outputs': [
+            '<(INTERMEDIATE_DIR)/output1.c',
+          ],
+          'process_outputs_as_sources': 1,
+          'action': [
+            'python', 'filter.py', 'foo', 'bar', 'foo.c', '<@(_outputs)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+        {
+          'action_name': 'action2',
+          'inputs': [
+            'foo.c',
+            'filter.py',
+          ],
+          'outputs': [
+            '<(INTERMEDIATE_DIR)/output2.c',
+          ],
+          'process_outputs_as_sources': 1,
+          'action': [
+            'python', 'filter.py', 'foo', 'car', 'foo.c', '<@(_outputs)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+        {
+          'action_name': 'action3',
+          'inputs': [
+            'foo.c',
+            'filter.py',
+          ],
+          'outputs': [
+            '<(INTERMEDIATE_DIR)/output3.c',
+          ],
+          'process_outputs_as_sources': 1,
+          'action': [
+            'python', 'filter.py', 'foo', 'dar', 'foo.c', '<@(_outputs)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+        {
+          'action_name': 'action4',
+          'inputs': [
+            'foo.c',
+            'filter.py',
+          ],
+          'outputs': [
+            '<(INTERMEDIATE_DIR)/output4.c',
+          ],
+          'process_outputs_as_sources': 1,
+          'action': [
+            'python', 'filter.py', 'foo', 'ear', 'foo.c', '<@(_outputs)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+      ],
+    },
+    {
+      'target_name': 'multiple_dependent_target',
+      'type': 'none',
+      'actions': [
+        {
+          'action_name': 'action1',
+          'inputs': [
+            'copy.py',
+            'input.txt',
+          ],
+          'outputs': [
+            'multi1.txt',
+          ],
+          'action': [
+            'python', '<@(_inputs)', '<(_outputs)', '<(long_string)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+        {
+          'action_name': 'action2',
+          'inputs': [
+            'copy.py',
+            'input.txt',
+          ],
+          'outputs': [
+            'multi2.txt',
+          ],
+          'action': [
+            'python', '<@(_inputs)', '<(_outputs)', '<(long_string)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+      ],
+      'dependencies': [
+        'multiple_required_target',
+      ],
+    },
+    {
+      'target_name': 'multiple_required_target',
+      'type': 'none',
+      'actions': [
+        {
+          'action_name': 'multi_dep',
+          'inputs': [
+            'copy.py',
+            'input.txt',
+          ],
+          'outputs': [
+            'multi_dep.txt',
+          ],
+          'process_outputs_as_sources': 1,
+          'action': [
+            'python', '<@(_inputs)', '<(_outputs)', '<(long_string)',
+          ],
+          # Allows the test to run without hermetic cygwin on windows.
+          'msvs_cygwin_shell': 0,
+        },
+      <Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net46</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+</Project>
+param($installPath, $toolsPath, $package, $project)
+. (Join-Path $toolsPath common.ps1)
+# VS 11 and above supports the new intellisense JS files
+$vsVersion = [System.Version]::Parse($dte.Version)
+$supportsJsIntelliSenseFile = $vsVersion.Major -ge 11
+if (-not $supportsJsIntelliSenseFile) {
+$displayVersion = $vsVersion.Major
+Write-Host "IntelliSense JS files are not supported by your version of Visual Studio: $displayVersion"
+exit
+}
+if ($scriptsFolderProjectItem -eq $null) {
+# No Scripts folder
+Write-Host "No Scripts folder found"
+exit
+}
+# Delete the vsdoc file from the project
+try {
+$vsDocProjectItem = $scriptsFolderProjectItem.ProjectItems.Item("jquery-$ver-vsdoc.js")
+Delete-ProjectItem $vsDocProjectItem
+}
+catch {
+Write-Host "Error deleting vsdoc file: " + $_.Exception -ForegroundColor Red
+exit
+}
+# Copy the intellisense file to the project from the tools folder
+$intelliSenseFileSourcePath = Join-Path $toolsPath $intelliSenseFileName
+try {
+$scriptsFolderProjectItem.ProjectItems.AddFromFileCopy($intelliSenseFileSourcePath)
+}
+catch {
+# This will throw if the file already exists, so we need to catch here
+}
+# Update the _references.js file
+AddOrUpdate-Reference $scriptsFolderProjectItem $jqueryFileNameRegEx $jqueryFileName
+@echo off
+rem all.bat
+rem     This tool can be used to iterate over all the schemes you have installed 
+rem     To help find one that you like. Simply press Ctrl+C when you get to one you like.
+rem     Note: You will likely destroy your current console window's history.
+rem     Only the most recent theme is visible in the console. 
+rem     All of the previously viewed tables will display the current scheme's colors.
+for %%i in (schemes\*) do (
+    echo %%i
+    .\colortool.exe "%%i"
+    pause
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,width=device-width,minimal-ui" /> /*********************************************************************
+* Filename:   md2_test.c
+* Author:     Brad Conte (brad AT ‪bradconte.com‬)
+* Copyright:
+* Disclaimer: This code is presented "as is" without any guarantees.
+* Details:    Performs known-answer tests on the corresponding MD2
+	          implementation. These tests do not encompass the full
+	          range of available test vectors, however, if the tests
+	          pass it is very, very likely that the code is correct
+	          and was compiled properly. This code also serves as
+	          example usage of the functions.
+*********************************************************************/
+/*************************** HEADER FILES ***************************/
+#include <stdio.h>
+#include <string.h>
+#include <memory.h>
+#include "md2.h"
+/*********************** FUNCTION DEFINITIONS ***********************/
+int md2_test()
+{
+	BYTE text1[] = {"abc"};
+	BYTE text2[] = {"abcdefghijklmnopqrstuvwxyz"};
+	BYTE text3_1[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcde"};
+	BYTE text3_2[] = {"fghijklmnopqrstuvwxyz0123456789"};
+	BYTE hash1[MD2_BLOCK_SIZE] = {0xda,0x85,0x3b,0x0d,0x3f,0x88,0xd9,0x9b,0x30,0x28,0x3a,0x69,0xe6,0xde,0xd6,0xbb};
+	BYTE hash2[MD2_BLOCK_SIZE] = {0x4e,0x8d,0xdf,0xf3,0x65,0x02,0x92,0xab,0x5a,0x41,0x08,0xc3,0xaa,0x47,0x94,0x0b};
+	BYTE hash3[MD2_BLOCK_SIZE] = {0xda,0x33,0xde,0xf2,0xa4,0x2d,0xf1,0x39,0x75,0x35,0x28,0x46,0xc3,0x03,0x38,0xcd};
+	BYTE buf[16];
+	MD2_CTX ctx;
+	int pass = 1;
+	md2_init(&ctx);
+	md2_update(&ctx, text1, strlen(text1));
+	md2_final(&ctx, buf);
+	pass = pass && !memcmp(hash1, buf, MD2_BLOCK_SIZE);
+	// Note that the MD2 object can be re-used.
+	md2_init(&ctx);
+	md2_update(&ctx, text2, strlen(text2));
+	md2_final(&ctx, buf);
+	pass = pass && !memcmp(hash2, buf, MD2_BLOCK_SIZE);
+	// Note that the data is added in two chunks.
+	md2_init(&ctx);
+	md2_update(&ctx, text3_1, strlen(text3_1));
+	md2_update(&ctx, text3_2, strlen(text3_2));
+	md2_final(&ctx, buf);
+	pass = pass && !memcmp(hash3, buf, MD2_BLOCK_SIZE);
+	return(pass);
+}
+int main()
+{
+	printf("MD2 tests: %s\n", md2_test() ? "SUCCEEDED" : "FAILED");
+}
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{{project.title}} {{project.version}}</title>
+    <style type='text/css'>
+    canvas {
+        vertical-align: middle;
+    }
+    .canvas-app-container {
+        /* A positioned parent for loading visuals */
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #0e1618;
+    }
+    .canvas-app-progress {
+        visibility: hidden;
+    }
+    .canvas-app-progress-bar {
+        visibility: hidden;
+    }
+    * { margin:0; padding:0; }
+    #canvas {
+        outline: none;
+        border: 0;
+        width: 100%;
+    }
+    canvas:focus, canvas:active {
+        outline: none;
+        border: 0;
+        ie-dummy: expression(this.hideFocus=true);
+        -moz-outline-style: none;
+    }
+    div {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    body {
+        position: fixed; /* Prevent overscroll */
+        background-color: rgb(0, 0, 0);
+    }
+    </style>
+    {{{DEFOLD_DEV_HEAD}}}
+</head>
+<body>
+    <div id="app-container" class="canvas-app-container">
+        <canvas id="canvas" class="canvas-app-canvas" tabindex="1" width="{{display.width}}" height="{{display.height}}"></canvas>
+    </div>
+    <!-- -->
+    {{{DEFOLD_DEV_INLINE}}}
+    <script id='engine-loader' type='text/javascript' src="dmloader.js"></script>
+    <script id='engine-setup' type='text/javascript'>
+        var extra_params = {
+            archive_location_filter: function( path ) {
+                return ("{{DEFOLD_ARCHIVE_LOCATION_PREFIX}}" + path + "{{DEFOLD_ARCHIVE_LOCATION_SUFFIX}}");
+            },
+            engine_arguments: [{{#DEFOLD_ENGINE_ARGUMENTS}}"{{.}}",{{/DEFOLD_ENGINE_ARGUMENTS}}],
+            //engine_arguments: ["--verify-graphics-calls=false"],
+            splash_image: "{{DEFOLD_SPLASH_IMAGE}}",
+            custom_heap_size: {{DEFOLD_HEAP_SIZE}},
+            disable_context_menu: true
+        }
+        Module['onRuntimeInitialized'] = function() {
+            Module.runApp("canvas", extra_params);
+        };
+        Module["locateFile"] = function(path, scriptDirectory)
+        {
+            // dmengine*.wasm is hardcoded in the built JS loader for WASM,
+            // we need to replace it here with the correct project name.
+            if (path == "dmengine.wasm" || path == "dmengine_release.wasm" || path == "dmengine_headless.wasm") {
+                path = "{{exe-name}}.wasm";
+            }
+            return scriptDirectory + path;
+        };
+        function load_engine() {
+            var engineJS = document.createElement('script');
+            engineJS.type = 'text/javascript';
+            if (Module['isWASMSupported']) {
+                engineJS.src = '{{exe-name}}_wasm.js';
+            } else {
+                engineJS.src = '{{exe-name}}_asmjs.js';
+            }
+            document.head.appendChild(engineJS);
+        }
+        // Make sure to resize the canvas to cover entire available area
+        // Resize on init, screen resize and orientation change
+        function resize_game_canvas() {
+            var app_container = document.getElementById('app-container');
+            var game_canvas = document.getElementById('canvas');
+            var dpi=window.devicePixelRatio || 1
+            var width=window.innerWidth;
+            var height=window.innerHeight;
+            var targetRatio = {{display.width}}/{{display.height}};
+            var actualRatio = width/height;
+            if (actualRatio > targetRatio) {
+                width = height * targetRatio;
+                app_container.style.marginLeft = ((window.innerWidth - width) / 2) + "px"
+                app_container.style.marginTop = "0px"
+            }
+            else {
+                height = width / targetRatio;
+                app_container.style.marginLeft = "0px"
+                app_container.style.marginTop = ((window.innerHeight - height) / 2) + "px"
+            }
+            app_container.style.width = width+"px";
+            app_container.style.height = height+"px";
+            game_canvas.width = width*dpi;
+            game_canvas.height = height*dpi;
+            window.console.log("width: " + game_canvas.width + " > "+ game_canvas.style.width)
+            window.console.log("height:" + game_canvas.height + " > "+ game_canvas.style.height)
+        }
+        resize_game_canvas();
+        window.addEventListener('resize', resize_game_canvas, false);
+        window.addEventListener('orientationchange', resize_game_canvas, false);
+        document.body.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false });
+    </script>
+    <script id='engine-start' type='text/javascript'>
+        load_engine();
+    </script>
+</body>
+</html>
+>artifacts- open sound!
+>artifacts- foo 
+         
+                         artifacts_ .build 
+>artifacts- graphics 
+A=b \ c=d > compose : artifacts
+       .1> Mata artifacts
+       .2> channel artifacts
+.build;>page     
+  
+                  } 
+                    Rer #art
+Dor-'x
+                Jump-CI
+
+>Test : stand 
+>Test : argument 
+                   Issues art |> gmright 
+
+
+
+;jump-CI-GitHub artmaker 
+
+Test-repo 
+                        Package.js (2=1\c)
+Testing: />fall 
+Testing: <\ retest 
+
+            artifacts Visionary's: 7162.7272.8181.8171.9181.998
+Visionary's Len plug.
+
+\>Macy write <<massive>> map 
+            \> Journey/g-ray
+                 \> duplicate files 
+                       
+                     \> angle #7872 
+
+ ._R%m{\.b
+ ._M<\>
+ .wash
+ .stand 
+
+           Direct club: massive 
+           Different club: massive 
+           Direct> package: massive 
+
+\Open_ < Galaxy
+\Open_ < packages_bag 
+\Open_ < loneliness/lit 
+\Open_ < revolution/programming 
+\Open_ < network 
+\Open_ < js.2.24.33
+
+         let resultText = result.text
+for block in result.blocks {
+    let blockText = block.text
+    let blockConfidence = block.confidence
+    let blockRecognizedLanguages = block.recognizedLanguages
+    let blockBreak = block.recognizedBreak
+    let blockCornerPoints = block.cornerPoints
+    let blockFrame = block.frame
+    for paragraph in block.paragraphs {
+        let paragraphText = paragraph.text
+        let paragraphConfidence = paragraph.confidence
+        let paragraphRecognizedLanguages = paragraph.recognizedLanguages
+        let paragraphBreak = paragraph.recognizedBreak
+        let paragraphCornerPoints = paragraph.cornerPoints
+        let paragraphFrame = paragraph.frame
+        for word in paragraph.words {
+            let wordText = word.text
+            let wordConfidence = word.confidence
+            let wordRecognizedLanguages = word.recognizedLanguages
+            let wordBreak = word.recognizedBreak
+            let wordCornerPoints = word.cornerPoints
+            let wordFrame = word.frame
+            for symbol in word.symbols {
+                let symbolText = symbol.text
+                let symbolConfidence = symbol.confidence
+                let symbolRecognizedLanguages = symbol.recognizedLanguages
+                let symbolBreak = symbol.recognizedBreak
+                let symbolCornerPoints = symbol.cornerPoints
+                let symbolFrame = symbol.frame
+
+--------------
+| s-1 == a-1|
+| der </ vol|
+         x.0 =< g.0|
+      echo off  |
+    g-review  |
+   2/c~>c-2  |
+ sub-vision |
+cont$v    |
+            Enter copy-code transmission ()
+             
+
+
+             D;Len-6 { shen 
+                L/l > necessary 
+                  Net-pro-(open) with power on 
+                  
+
+@ev 
+                    @sec
+
+
+
+      @echo actually now activities (on)
+
+                     
+ Len-6 turn down l/L to run by debugging 
+
+          
+            @ev{ 0.1
+
+
+@netbook 
+
