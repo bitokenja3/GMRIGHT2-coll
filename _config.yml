@@ -1,0 +1,8 @@
+title: Gmright2-coll
+description: GMRIGHT2 coll is public repo for gmright2  application and documents is where you get full access of this pro command to work in any PC with gmright2 tools
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
