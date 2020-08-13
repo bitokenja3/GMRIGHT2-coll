@@ -1,5 +1,5 @@
 # GMRIGHT2-coll
-GMRIGHT2 coll is public repo for gmright2  application and documents is where you get full access of this pro command to work in any PC with gmright2 tools 
+GMRIGHT2 coll is public repo for gmright2  application and documents is where you get full access of this pro command to work in any PC and help with 3D designing good version of your application with security and secure tools that you need to use for your website with gmright2 tools 
   $loginUrl = $gmright->getLoginUrl();# gmright2.io
 Welcome to gmright2 revolution leaning more here about software and build your workflow system with us we have all the support for you
  
