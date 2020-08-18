@@ -1,14 +1,168 @@
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here [using GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/), select a template crafted by a designer, and publish. After your page is generated, you can check out the new `gh-pages` branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.
+Deploy files with gmright2 and jecklly
 
-### Designer Templates
-We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.
+Custom icon
 
-### Creating pages manually
-If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
 
-### Authors and Contributors
-You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
 
-### Support or Contact
-Having trouble with Pages? Check out our [documentation](https://help.github.com/pages) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+
+
+Git
+SPACE SHORTCUTS
+PAGES
+
+
+You are viewing the desktop version of Confluence on a mobile supported device. Switch to Confluence Mobile
+Git
+
+
+
+
+
+Share
+
+
+curl -i \
+-H "Authorization: Bearer REFRESH_JWT" \
+-H "X-Client-ID: CLIENT_ID" \
+-H "Accept: application/json" \
+-X POST \ https://zube.io/api/users/tokens
+
+Your business values
+Created by George Makulu
+Last updated 04,26,2020
+ 
+
+Open this location service to your business 
+
+Diagram owner
+
+@Kenja B 
+
+Team 
+
+
+
+Informed 
+
+
+
+Status
+
+DRAFT / IN REVIEW / APPROVED / IN PRODUCTION
+
+Last date updated
+
+Feb 20, 2020
+
+On this page
+
+Goals
+  Architecture
+  Deployment strategy
+  Rest API details
+  SLA
+  Action Items
+  References and documentation
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+Goals
+
+ 
+
+ 
+
+
+  Architecture
+<Add diagram>
+
+Install your favorite diagramming app from our Marketplace, then use the / command to embed an architecture diagram in this table. Try using the Lucidchart AWS diagram. 
+
+
+Architecture flow 
+
+ 
+
+ 
+
+Other notes:
+
+ 
+
+
+  Deployment strategy 
+Deployment region: 
+
+ 
+
+
+  Rest API details
+
+{
+  "samplecode: string"
+}
+ 
+
+
+  SLA
+Requests Per Second (RPS):
+
+Latency: 
+
+ 
+
+
+  Action Items 
+Action
+
+Description
+
+Owner
+
+Due date
+
+Jira ticket
+
+1	
+
+
+
+Mar 5, 2020
+
+
+2	
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+  References and documentation
+
+ 
+
+ 
+
+LikeBe the first to like this
+No labels
+com.atlassian.confluence.content.render.xhtml.migration.exceptions.UnknownMacroMigrationException: The macro ' printf("foon"); ' is unknown.
