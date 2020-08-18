@@ -1845,3 +1845,138 @@ pro-gmright2_ 322772828/milestone create.build/milestones
 -pro-gmright2_ 1727362822/cover test code for each files to take code elements and call indexation process
 -pro-gmright2_ 11272718172/cover test code
 -pro-gmright2_ 17226627211/disk format code complete than take the next move
+00001 /*
+00002 **  Licensed to the Apache Software Foundation (ASF) under one or more
+00003 ** contributor license agreements.  See the NOTICE file distributed with
+00004 ** this work for additional information regarding copyright ownership.
+00005 ** The ASF licenses this file to You under the Apache License, Version 2.0
+00006 ** (the "License"); you may not use this file except in compliance with
+00007 ** the License.  You may obtain a copy of the License at
+00008 **
+00009 **      http://www.apache.org/licenses/LICENSE-2.0
+00010 **
+00011 **  Unless required by applicable law or agreed to in writing, software
+00012 **  distributed under the License is distributed on an "AS IS" BASIS,
+00013 **  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+00014 **  See the License for the specific language governing permissions and
+00015 **  limitations under the License.
+00016 */
+00017 
+00018 #ifndef APREQ_COOKIE_H
+00019 #define APREQ_COOKIE_H
+00020 
+00021 #include "apreq.h"
+00022 #include "apr_time.h"
+00023 
+00024 #ifdef  __cplusplus
+00025 extern "C" {
+00026 #endif
+00027 
+00048 #define APREQ_COOKIE_MAX_LENGTH            4096
+00049 
+00053 typedef struct apreq_cookie_t {
+00054 
+00055     char           *path;        
+00056     char           *domain;      
+00057     char           *port;        
+00058     char           *comment;     
+00059     char           *commentURL;  
+00060     apr_time_t      max_age;     
+00061     unsigned        flags;       
+00062     const apreq_value_t   v;     
+00064 } apreq_cookie_t;
+00065 
+00066 
+00068 static APR_INLINE
+00069 apreq_cookie_t *apreq_value_to_cookie(const char *val)
+00070 {
+00071     union { const char *in; char *out; } deconst;
+00072 
+00073     deconst.in = val;
+00074     return apreq_attr_to_type(apreq_cookie_t, v,
+00075            apreq_attr_to_type(apreq_value_t, data, deconst.out));
+00076 }
+00077 
+00079 static APR_INLINE
+00080 unsigned apreq_cookie_version(const apreq_cookie_t *c) {
+00081     return APREQ_FLAGS_GET(c->flags, APREQ_COOKIE_VERSION);
+00082 }
+00083 
+00085 static APR_INLINE
+00086 void apreq_cookie_version_set(apreq_cookie_t *c, unsigned v) {
+00087     APREQ_FLAGS_SET(c->flags, APREQ_COOKIE_VERSION, v);
+00088 }
+00089 
+00091 static APR_INLINE
+00092 unsigned apreq_cookie_is_secure(const apreq_cookie_t *c) {
+00093     return APREQ_FLAGS_GET(c->flags, APREQ_COOKIE_SECURE);
+00094 }
+00095 
+00099 static APR_INLINE
+00100 void apreq_cookie_secure_on(apreq_cookie_t *c) {
+00101     APREQ_FLAGS_ON(c->flags, APREQ_COOKIE_SECURE);
+00102 }
+00103 
+00105 static APR_INLINE
+00106 void apreq_cookie_secure_off(apreq_cookie_t *c) {
+00107     APREQ_FLAGS_OFF(c->flags, APREQ_COOKIE_SECURE);
+00108 }
+00109 
+00111 static APR_INLINE
+00112 unsigned apreq_cookie_is_httponly(const apreq_cookie_t *c) {
+00113     return APREQ_FLAGS_GET(c->flags, APREQ_COOKIE_HTTPONLY);
+00114 }
+00115 
+00120 static APR_INLINE
+00121 void apreq_cookie_httponly_on(apreq_cookie_t *c) {
+00122     APREQ_FLAGS_ON(c->flags, APREQ_COOKIE_HTTPONLY);
+00123 }
+00124 
+00126 static APR_INLINE
+00127 void apreq_cookie_httponly_off(apreq_cookie_t *c) {
+00128     APREQ_FLAGS_OFF(c->flags, APREQ_COOKIE_HTTPONLY);
+00129 }
+00130 
+00131 
+00133 static APR_INLINE
+00134 unsigned apreq_cookie_is_tainted(const apreq_cookie_t *c) {
+00135     return APREQ_FLAGS_GET(c->flags, APREQ_TAINTED);
+00136 }
+00137 
+00139 static APR_INLINE
+00140 void apreq_cookie_tainted_on(apreq_cookie_t *c) {
+00141     APREQ_FLAGS_ON(c->flags, APREQ_TAINTED);
+00142 }
+00143 
+00145 static APR_INLINE
+00146 void apreq_cookie_tainted_off(apreq_cookie_t *c) {
+00147     APREQ_FLAGS_OFF(c->flags, APREQ_TAINTED);
+00148 }
+00149 
+00165 APREQ_DECLARE(apr_status_t) apreq_parse_cookie_header(apr_pool_t *pool,
+00166                                                       apr_table_t *jar,
+00167                                                       const char *header);
+00168 
+00180 APREQ_DECLARE(apreq_cookie_t *) apreq_cookie_make(apr_pool_t *pool,
+00181                                                   const char *name,
+00182                                                   const apr_size_t nlen,
+00183                                                   const char *value,
+00184                                                   const apr_size_t vlen);
+00185 
+00195 APREQ_DECLARE(char*) apreq_cookie_as_string(const apreq_cookie_t *c,
+00196                                             apr_pool_t *p);
+00197 
+00198 
+00211 APREQ_DECLARE(int) apreq_cookie_serialize(const apreq_cookie_t *c,
+00212                                           char *buf, apr_size_t len);
+00213 
+00228 APREQ_DECLARE(void) apreq_cookie_expires(apreq_cookie_t *c,
+00229                                          const char *time_str);
+00230 
+00231 #ifdef __cplusplus
+00232  }
+00233 #endif
+00234 
+00235 #endif /*APREQ_COOKIE_H*/
+00236 
+00237 
