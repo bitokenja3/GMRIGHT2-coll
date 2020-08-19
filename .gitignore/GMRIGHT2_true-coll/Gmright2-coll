@@ -18,7 +18,20 @@ Test_toolz! Spin the power of coll command x.files start argument.5/in license v
 Test_toola! Spin memory card _gmright2.ci-true
 Test_toolx! Spin  class . argument with percentage"value"
 Test-arguments gmright2 box open source path for "coll"
-  Log.arguments/true
+ resources.pipeline.<Alias>.projectName
+resources.pipeline.<Alias>.projectID
+resources.pipeline.<Alias>.pipelineName
+resources.pipeline.<Alias>.pipelineID
+resources.pipeline.<Alias>.runName
+resources.pipeline.<Alias>.runID
+resources.pipeline.<Alias>.runURI
+resources.pipeline.<Alias>.sourceBranch
+resources.pipeline.<Alias>.sourceCommit
+resources.pipeline.<Alias>.sourceProvider
+resources.pipeline.<Alias>.requestedFor
+resources.pipeline.<Alias>.requestedForID }
+{
+Log.arguments/true
    Log.applications/true
 Logde getting ready for panicked the phone.pysiqual.strings 
 Logde-arguments true  coll_patg
