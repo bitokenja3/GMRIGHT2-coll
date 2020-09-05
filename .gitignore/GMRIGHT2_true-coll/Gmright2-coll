@@ -1816,6 +1816,30 @@ Landscape:_} (7.1.3)
 Landscape:_} (3.1.1)
 Landscape:_} (2.1.3)
 Landscape:_} (1.1.4)
+
+#! /usr/bin/env ruby
+
+require 'nokogiri'
+require 'open-uri'
+
+# Fetch and parse HTML document
+doc = Nokogiri::HTML(URI.open('https://nokogiri.org/tutorials/installing_nokogiri.html'))
+
+puts "### Search for nodes by css"
+doc.css('nav ul.menu li a', 'article h2').each do |link|
+  puts link.content
+end
+
+puts "### Search for nodes by xpath"
+doc.xpath('//nav//ul//li/a', '//article//h2').each do |link|
+  puts link.content
+end
+
+puts "### Or mix and match."
+doc.search('nav ul.menu li a', '//article//h2').each do |link|
+  puts link.content
+
+
                              docker pull gmright2/book
 
 Docker _processor a.1 new path open landscape pill gmright2/book in to output run -server.string /server.pipelines open in this position
