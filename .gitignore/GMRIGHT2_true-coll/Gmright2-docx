@@ -506,6 +506,12 @@ Change date of platformions and location (false)
 $block {docx /block
        $block { https://GitHub.com _we don't accept any type of change on this application /block
 $block chain 
+Doc set operational command enabled to operate yes drive Gmright2.pro command running normal speed yes no 
+
+Doc > )} 12'8π×r=×/law:+2(2<2)=π
+                      Doc > )} 71÷2=2(2<2)
+                      Doc > )} 6π÷4=2
+                       Doc > )}  ³/²π+6
 
 Plat only be able to allow does with full function in this application block root straight
 Plat only pass source of code in this application block : program combination "true"
@@ -1922,3 +1928,25 @@ Xcode: file is able to start operating system in any source of "PC" true allow
 Xcode: welcome in this other (PC.version) "true"
 Xcode: Gmright2 in the best possibles and physical performance  "true"
 Jobs start running: "true"
+
+- pipe: /aws-elasticbeanstalk-deploy:0.6.7
+  variables:
+    AWS_ACCESS_KEY_ID: '<string>' # Optional if already defined in the context.
+    AWS_SECRET_ACCESS_KEY: '<string>' # Optional if already defined in the context.
+    AWS_DEFAULT_REGION: '<string>' # Optional if already defined in the context.
+    APPLICATION_NAME: '<string>'
+    ENVIRONMENT_NAME: '<string>'
+    
+
+
+     }>>>>>>>
+{> } 
+
+- pipe: Gmright2 /platform-deploy:0.7.0
+  variables:
+    KEY_FILE: '<string>'
+    Gmright2_TOKEN: '<string>'
+    # PROJECT_ID: '<string>' # Optional.
+    # MESSAGE: '<string>' # Optional.
+    # EXTRA_ARGS: '<string>' # Optional.
+
