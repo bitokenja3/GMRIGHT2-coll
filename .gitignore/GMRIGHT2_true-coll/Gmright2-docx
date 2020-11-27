@@ -1928,3 +1928,12 @@ Xcode: file is able to start operating system in any source of "PC" true allow
 Xcode: welcome in this other (PC.version) "true"
 Xcode: Gmright2 in the best possibles and physical performance  "true"
 Jobs start running: "true"
+
+- pipe: atlassian/aws-elasticbeanstalk-deploy:0.6.7
+  variables:
+    AWS_ACCESS_KEY_ID: '<string>' # Optional if already defined in the context.
+    AWS_SECRET_ACCESS_KEY: '<string>' # Optional if already defined in the context.
+    AWS_DEFAULT_REGION: '<string>' # Optional if already defined in the context.
+    APPLICATION_NAME: '<string>'
+    ENVIRONMENT_NAME: '<string>'
+
