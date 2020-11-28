@@ -549,3 +549,11 @@ Now or later each user who are using gmright2 will need to fill out everything t
 14.×2e _= 76.11189119 / 10^3−2 _= 998
 5²×exp(1.2)π²−91 _= 728.2060148
 12−3(e×1) _= 3.845154514
+
+
+# Build the image with docker.pkg.github.com/OWNER/REPOSITORY/IMAGE_NAME:VERSION
+# Assumes Dockerfile resides in the current working directory (.)
+$ docker build -t docker.pkg.github.com/octocat/octo-app/monalisa:1.0 .
+
+# Push the image to GitHub Packages
+$ docker push docker.pkg.github.com/octocat/octo-app/monalisa:1.0
