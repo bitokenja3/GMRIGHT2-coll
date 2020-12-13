@@ -2100,3 +2100,47 @@ This is Gmright2 policy about Qi.informations in the [ QI.GMRIGHT2] user is Enab
 This is why QI.gmright2 is here to help user with their ability to keep information and to show all the data user wish to show in public 
 
 Below are some important notes on upgrading to GMRIGHT2  4.4.4.4 For details of the new features and improvements in this release, please read the 
+
+@orb check : path check source of this path check start : treatment - orbital operation check (yes) allow orb to performance in (Gmright2) correct allow 
+@orb check : Gmright2 composition in process pipeline projects running speed 100% percent running faster 200% percent more minutes each per milestone 
+
+version: '2.1'
+orbs:
+  orb-tools: circleci/orb-tools@10
+  your-orb: your-namespace/your-orb@<<pipeline.parameters.dev-orb-version>>
+jobs:
+  integration-tests-for-your-orb:
+    executor: orb-tools/ubuntu
+    steps:
+      - checkout
+workflows:
+  integration-test_deploy:
+    jobs:
+      - integration-tests-for-your-orb
+      - orb-tools/dev-promote-prod-from-commit-subject:
+          add-pr-comment: false
+          fail-if-semver-not-indicated: false
+          filters:
+            branches:
+              only: master
+          orb-name: your-namespace/your-orb
+          publish-version-tag: false
+          requires:
+            - integration-tests-for-your-orb
+    when: << pipeline.parameters.run-integration-tests >>
+  test-pack:
+    jobs:
+      - orb-tools/lint
+      - orb-tools/pack
+      - orb-tools/publish-dev:
+          orb-name: your-namespace/your-orb-name
+          requires:
+            - orb-tools/lint
+            - orb-tools/pack
+      - orb-tools/trigger-integration-tests-workflow:
+          name: trigger-integration-dev
+          requires:
+            - orb-tools/publish-dev
+    unless: << pipeline.parameters.run-integration-tests >>
+
+
