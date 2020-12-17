@@ -2148,3 +2148,18 @@ Knobhub (1.2)! Open pages in correct order if "COLL" said (1.3) move the (1.2)! 
 Knobhub (1.3)! Open check the existence of number # { 1.3 } which it made the native calculation to check from normal spot to the exchange of settings in place by " @gmright2.log "
 Knobhub (1.2)! Open the application with the issue number #24 "Gmright2.log"
 
+Downloaded: # Create a folder
+$ mkdir actions-runner && cd actions-runner
+# Download the latest runner package
+$ curl -O -L https://github.com/actions/runner/releases/download/v2.275.0/actions-runner-linux-x64-2.275.0.tar.gz
+# Extract the installer
+$ tar xzf ./actions-runner-linux-x64-2.275.0.tar.gz
+   
+Configuration: # Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/bitokenja3/GMRIGHT2-coll --token AQEUF5PSBUKVEHWD3O2GDNS73P2P4
+# Last step, run it!
+$ ./run.sh
+
+Self-host: # Use this YAML in your workflow file for each job
+runs-on: self-hosted
+
