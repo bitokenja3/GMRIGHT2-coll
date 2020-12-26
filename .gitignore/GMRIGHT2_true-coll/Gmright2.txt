@@ -2207,3 +2207,73 @@ Gmright2.platform.root network circle port platform : line 19 bytes  "Gmright2" 
 Welcome to Gmright2 : open path here and start using Gmright2 technology the hub platform it will be able to perform better control panel for this application tools in any source of data bar the control panel is allowing user error data enabled testing the system in this data location is enabled to open in any any packages with this location permission administrator or owner all information mast remains private this is to protect organization users information or in privacy settings and to does files that's public only mast remains public user is enabled to post in public and in private model yes allow user to create new account or login with the "Gmright2.login@" APIs- APIs command wake up run this APIs " georgemwasafi@gmail.com " APIs Enabled to connect automation authority by @GeorgeMakulu
 Welcome to Gmright2 : in the map hub Gmright2 location in profile of this course ( "Gmright2" ) : profiles-show Enabled performance show output results in version [" https://github.com/bitokenja3/gmright2.github.io-/releases/tag/V.27.8 "] system " gate " supported enabled installation communication between COLL > Command enabled performance turn on " loops@ " version enabled running system application in this version [" https://github.com/bitokenja3/gmright2.app.cloud/releases/tag/6.0.9%2FN.9 "] version installed in this txt enabled running program.configuration text " welcome " network service "Gmright2" connected " Gmright2 " hub in Gmright2 cloud in this source links version [" https://github.com/bitokenja3/gmright2.app.cloud/releases/tag/7.92.102.11 "] server enabled to connect run in project https://github.com/bitokenja3/GMRIGHT2-coll/projects/1#column-12177239 
 Gmright2 to Gmright2 : in load network users install operator installation enabled running network circle platform-! Gmright2 (network)! Netbook  panel - zone card - network circle [<Gmright2>] Network net hub / cloud / serve txt / enabled testing - / enabled circle port / cloud service network / network-slide / cv.12 / install app/ duration during the process / programming application process enabled access in any locations available/ secure  
+Job started: 26 December 2020, 13:30:04
+Processed bitokenja3/docs from GitHub
+Found Gemfile.lock [main] View project
+Found translations/de-DE/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/zh-CN/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ko-KR/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ja-JP/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/es-XL/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ru-RU/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found Dockerfile [main] View project
+Found package.json [main] View project
+Found content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+10 projects created
+Processed bitokenja3/gmright2-platform from GitHub
+Found api/Dockerfile [master] View project
+Found client/package.json [master] View project
+Found api/composer.lock [master] View project
+Found admin/Dockerfile [master] View project
+Found api/helm/api/Chart.yaml [master] Failed to process file api/helm/api/Chart.yaml More info
+Found client/Dockerfile [master] View project
+Found docker/dev-tls/Dockerfile [master] View project
+Found admin/package.json [master] View project
+7 projects created
+Processed bitokenja3/marketing from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.github.io- from GitHub
+Found Gmright/ColorTool.csproj [net46] [master] View project
+Found Gmright/Milestones/MiniTerm.csproj [.NETFramework,Version=v4.7.2] [master] View project
+Found Gmright/Milestones/Gmright-market/Commerce/Net_holder/Blue-sky/Gemfile.lock [master] View project
+Found Gmright/Milestones/Gmright-market/Commerce/package.json [master] View project
+Found Gmright-system/requirements.txt [master] View project
+5 projects created
+Processed bitokenja3/SmartYouTubeTV from GitHub
+Found smartyoutubetv/package.json [main-branch] View project
+Found build.gradle [main-branch] View project
+Found exoplayeractivity/build.gradle [main-branch] View project
+Found common/build.gradle [main-branch] View project
+Found browser/build.gradle [main-branch] View project
+Found exoplayer-extension-vp9/build.gradle [main-branch] View project
+Found smartyoutubetv/build.gradle [main-branch] View project
+7 projects created
+Processed bitokenja3/jekyll from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/nuevo from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/http-kernel from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.io from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.app.cloud from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/GMRIGHT2-coll from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright.app from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/explore from GitHub
+Found Gemfile.lock [master] View project
+1 project created
+Processed bitokenja3/DEVELOP.GMRIGHT.COM from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Job completed: 26 December 2020, 13:32:39
