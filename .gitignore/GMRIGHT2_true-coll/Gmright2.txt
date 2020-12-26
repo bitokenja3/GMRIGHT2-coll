@@ -2281,12 +2281,36 @@ Job completed: 26 December 2020, 13:32:39
 -DevOps ',> Gmright2  - coll wrote devOps -controllable enables operator sort match data function combine output results and push back to build input results in the stable network service 
 -DevOps ',> Gmright2  - platform server accepted this requirement "true" operator instructions function data enabled performance push output value from front cloud service network enabled push results output 
 -DevOps ',> Gmright2  - bucketloads server fork ip-address georgemwasafi@gmail.com - set email private model "true" value [< private value >] true server service run port in this source value : " ,Gmright2, "
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
-https://www.gmright.org*.python.run.c.1.2.2/
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub push this version enabled- clone this application process pin public service 
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub push  this documents enabled- clone the system repository pin public service 
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub push and create new hub for users - enabled network start running league platform service server (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub create doc output value$ Gmright2 / network service slide plat set in this software location run! (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub shine look output play value$ Gmright2-script Enabled scope read script - lines enabled run perfect speed (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play one and save or delete one play 2 save or delete 2 play 3 save or delete 3 play 4 save or delete 4 runs #free running (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play Gmright2 - files enabled play in studio enabled play in cloud enabled play in CI enabled play in command enabled running  (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play Gmright2 server enabled play core enabled play launch enabled play DSK Enabled play scrolls enabled play panel enabled running  (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play bucket enabled play root enabled play loops enabled play flap.io enabled play fork enabled play version command enabled running (True)
+
+name: ci
+
+on:
+  push:
+
+jobs:
+  qemu:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Set up QEMU
+        id: qemu
+        uses: docker/setup-qemu-action@v1
+        with:
+          image: tonistiigi/binfmt:latest
+          platforms: all
+      -
+        name: Available platforms
+        run: echo ${{ steps.qemu.outputs.platforms }}
+
