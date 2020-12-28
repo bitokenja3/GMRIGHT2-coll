@@ -254,6 +254,42 @@ Coll.http-user! editing-false
 Coll-run outside"GMRIGHT2"false
 Coll-netbook-set user data.true
 Coll-command _spin data.graphic.output/true-energy
+
+Using build environment variables:
+  BASH_ENV=/tmp/.bash_env-5fe944bc61dcd2567b566505-0-build
+  CI=true
+  CIRCLECI=true
+  CIRCLE_BRANCH=revert-40-revert-35-master
+  CIRCLE_BUILD_NUM=108
+  CIRCLE_BUILD_URL=https://circleci.com/gh/bitokenja3/GMRIGHT2-coll/108
+  CIRCLE_COMPARE_URL=
+  CIRCLE_JOB=welcome/run
+  CIRCLE_NODE_INDEX=0
+  CIRCLE_NODE_TOTAL=1
+  CIRCLE_PREVIOUS_BUILD_NUM=107
+  CIRCLE_PROJECT_REPONAME=GMRIGHT2-coll
+  CIRCLE_PROJECT_USERNAME=bitokenja3
+  CIRCLE_PULL_REQUEST=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+  CIRCLE_PULL_REQUESTS=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+  CIRCLE_REPOSITORY_URL=git@github.com:bitokenja3/GMRIGHT2-coll.git
+  CIRCLE_SHA1=f2e41ec3371090257bdfdf0897ce35d81c0e4052
+  CIRCLE_SHELL_ENV=/tmp/.bash_env-5fe944bc61dcd2567b566505-0-build
+  CIRCLE_STAGE=welcome/run
+  CIRCLE_USERNAME=bitokenja3
+  CIRCLE_WORKFLOW_ID=adb7b37f-df6a-4f39-8999-48b2444db868
+  CIRCLE_WORKFLOW_JOB_ID=585831ce-0957-4133-bb12-90df27bd3c37
+  CIRCLE_WORKFLOW_UPSTREAM_JOB_IDS=
+  CIRCLE_WORKFLOW_WORKSPACE_ID=adb7b37f-df6a-4f39-8999-48b2444db868
+  CIRCLE_WORKING_DIRECTORY=~/project
+  CI_PULL_REQUEST=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+  CI_PULL_REQUESTS=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+
+Using environment variables from project settings and/or contexts:
+  CIRCLE_JOB=**REDACTED**
+  SLACK_WEBHOOK=**REDACTED**
+
+The redacted variables listed above will be masked in run step output.
+
 C:/programming-communications start running "gmright2"tools output
 C-wrote : GMRIGHT2.controll successful installed-true
 C-wrote : gmright2.controll tools successful installed-true
