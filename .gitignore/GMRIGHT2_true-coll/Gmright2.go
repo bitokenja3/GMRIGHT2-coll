@@ -557,3 +557,9 @@ $ docker build -t docker.pkg.github.com/octocat/octo-app/monalisa:1.0 .
 
 # Push the image to GitHub Packages
 $ docker push docker.pkg.github.com/octocat/octo-app/monalisa:1.0
+$ docker push docker pkg 
+$ go push https://gmright2.atlassian.net/browse/GMRIGHT2-21
+$ go push https://gmright2.atlassian.net/browse/GMRIGHT2-17
+$ go push https://gmright2.atlassian.net/browse/GMRIGHT2-19
+$ go push https://gmright2.atlassian.net/browse/GMRIGHT2-16
+  go.configuration/gmright2/coll/go-api/server.go/gmright2  
