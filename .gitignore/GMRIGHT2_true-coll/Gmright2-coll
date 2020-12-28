@@ -363,18 +363,3 @@ class FeatureContext implements Context, SnippetAcceptingContext
 ...,"app":"PHP","message":"fclose(): SSL operation failed with code 1. OpenSSL Error messages:\nerror:140D00CF:SSL routines:SSL_write:protocol is shutdown at \/var\/www\/htdocs\/nextcloud\/apps\/files_external\/3rdparty\/icewind\/streams\/src\/Wrapper.php#124","level":3,"time":"2017-02-28 19:32:03+01:00","method":"GET","url":"\/nextcloud\/index.php\/core\/preview.png?file=%2FFTP%2Fgolfschlaeger.jpg&c=563126bcdb50f&x=32&y=32&forceIcon=0","user":"juergen","version":"11.0.2.7"}
 ...,"app":"core","message":"OC_Image->fixOrientation() Image is not a JPEG.","level":0,"time":"2017-02-28 19:32:03+01:00","method":"GET","url":"\/nextcloud\/index.php\/core\/preview.png?file=%2FFTP%2Fgolfschlaeger.jpg&c=563126bcdb50f&x=32&y=32&forceIcon=0","user":"juergen","version":"11.0.2.7"}
 ...,"app":"core","message":"OC_Image->fixOrientation() Orientation: -1","level":0,"time":"2017-02-28 19:32:03+01:00","method":"GET","url":"\/nextcloud\/index.php\/core\/preview.png?file=%2FFTP%2Fgolfschlaeger.jpg&c=563126bcdb50f&x=32&y=32&forceIcon=0","user":"juergen","version":"11.0.2.7"}
-___+gmright2 logde-arguments  fix the problem :
-[-7.0]+[0.2]/[5.1]
-0+9=[5.1]5+3
-5-8=2-4
-3+4=[-7.0]
-10-3=(+7)
-If this program fix than write down "(gmright2 technology fixed this program)"
->Fix ladge include larger# 
->Fix control include gmright2 server
->Fix map in server "gmright2"
->Fix problem in mathematics problem include "gmright2"
->Fix:[5-8=2-4] to fix [5+9=2+4] "true"
->Fix:[10+3]π# to provide the right or core "license"
->Fix'[+7.1] =[-7+1]
-            Don't lose DIN -domain location set
