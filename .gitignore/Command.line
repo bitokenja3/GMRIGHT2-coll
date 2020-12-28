@@ -1,6 +1,0 @@
-git checkout -b Gmright2-zone-gmright2.bucket master
-git pull https://github.com/Gmright2-zone/GMRIGHT2-coll.git gmright2.bucket
-Step 2: Merge the changes and update on GitHub.
- git checkout master
-git merge --no-ff Gmright2-zone-gmright2.bucket
-git push origin master
