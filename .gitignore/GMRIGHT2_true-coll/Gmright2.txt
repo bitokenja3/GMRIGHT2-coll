@@ -148,6 +148,21 @@ GMRIGHT2- wrote coll setting-arguments path in {self storage} gmright2 [true]
    Administration-in gmright2 is able to set this application roof and Root [true]
 Administration-gmright2 wrote only admin have the permission to set this "self storage unit"[true]
 
+version: 2.1
+executors:
+  my-executor:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+jobs:
+  my-job:
+    executor: my-executor
+    steps:
+      - run: echo outside the executor
+
 [-7.0]+[0.2]/[5.1]
 0+9=[5.1]5+3
 5-8=2-4
