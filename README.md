@@ -46,6 +46,3 @@ From this to start tuning the process user need all the documentation of gmright
 <Log><soft.link>
 <Log.map><screen>[slapp>
 <Log.string>
-Gmright2 innovation center road all your interest for more of tool you need is located in here  build your software with better technology here at gmright2 we gave what you want and we build all for you 
-Gmright2 would provide you with server successful installed- that work on tuning all your application in one and it would be able to take your technology on pro location here at gmright2 we build all for you and the is not missing thing
-You are welcome to work with us the trust able system
