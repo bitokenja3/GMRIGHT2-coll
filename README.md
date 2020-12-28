@@ -49,9 +49,5 @@ From this to start tuning the process user need all the documentation of gmright
 Gmright2 innovation center road all your interest for more of tool you need is located in here  build your software with better technology here at gmright2 we gave what you want and we build all for you 
 Gmright2 would provide you with server successful installed- that work on tuning all your application in one and it would be able to take your technology on pro location here at gmright2 we build all for you and the is not missing thing
 You are welcome to work with us the trust able system
-Did you sign in [✓] or [x].   $location
-<bar><pool> open output tools
+Did you sign in [✓] or [x]
 If [✓]  open this location
-Run {output-powershel}
-Allow-user to start writing [a.b=cB/b.a=blog] this is in powershell in gmright2 logde-arguments fix
-Allow this application to run in pro command
