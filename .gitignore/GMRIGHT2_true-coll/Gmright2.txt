@@ -2361,3 +2361,29 @@ Status: Downloaded newer image for circleci/welcome-config-image:0.2.1
   using image circleci/welcome-config-image@sha256:01f2ee2fe579522417f13d799707cb1896320377e6fbbc70cdb35dd1f4e2b325
 Time to upload agent and config: 697.439005ms
 Time to start containers: 1.211135141s
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: python:3.6.3-jessie
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    working_directory: /tmp
+    steps:
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+
+      - store_artifacts:
+          path: /tmp/artifacts
+
