@@ -38,11 +38,3 @@ This source of code will be work only for gmright2 application if the applicatio
 
 This application was created for the love heart of gmright2 and hard work of gmright2 itself
 From this to start tuning the process user need all the documentation of gmright2 which it is needs for forgiveness inside the studio at gmright2 org https://github.com/Gmright2-butket/Gmright2.bucket.QA/blob/902d5bd48c142d613e6aef89693595a02439e580/Shine/G.studio/Install.io
-     <PHN>
-<Powershell>
-<HTTPS>
-    <<Bar>
-<Head><name>
-<Log><soft.link>
-<Log.map><screen>[slapp>
-<Log.string>
