@@ -563,3 +563,8 @@ $ go push https://gmright2.atlassian.net/browse/GMRIGHT2-17
 $ go push https://gmright2.atlassian.net/browse/GMRIGHT2-19
 $ go push https://gmright2.atlassian.net/browse/GMRIGHT2-16
   go.configuration/gmright2/coll/go-api/server.go/gmright2  
+$ go/home/go-setting in home / go.operator / server command server = push all documents ['cv'] go deploy jobs welcome.full.configuration enabled 
+ $ go/home/user.admin/console.configiration/gmright2.user.deploy.command/go.configuration.0.1/gmright2.coll.enabled/go.package.enabled/go.setting.operator.enabled/go
+$ go map open map in go start slow /go-operation/collect data collection packages "(box)" enabled scan packages enabled running port platform "go" server service network enabled 
+$ go install system enabled system version install all the process are in position to "go" install in hardware bot enabled "computer" read "gmright2.go" enabled remote 
+ Remote control system- login ';go push system power enabled running port platform operator network service "go" enabled version reliable source "true" $go push <value>
