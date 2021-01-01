@@ -568,3 +568,6 @@ $ go/home/go-setting in home / go.operator / server command server = push all do
 $ go map open map in go start slow /go-operation/collect data collection packages "(box)" enabled scan packages enabled running port platform "go" server service network enabled 
 $ go install system enabled system version install all the process are in position to "go" install in hardware bot enabled "computer" read "gmright2.go" enabled remote 
  Remote control system- login ';go push system power enabled running port platform operator network service "go" enabled version reliable source "true" $go push <value>
+Loops pause and go! Open cards by cards in order go! Normal speed limit in version release server  {  v12.7.1.2 } https://github.com/bitokenja3/GMRIGHT2-coll/releases/tag/V12.7.1.2 go! Push control system run "output" go! Output 
+Loops from " Jira"go! Operation issues clone this application that show output results from Gmright2 management and service which is to provide to all software users this is the best platform and is all the time available to use 
+Loops from panel to ><go! Marching all the screams in one package allow output to show output results enabled this documents and this repository enabled testing and set
