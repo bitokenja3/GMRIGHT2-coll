@@ -557,7 +557,7 @@ $ docker build -t docker.pkg.github.com/octocat/octo-app/monalisa:1.0 .
 
 # Push the image to GitHub Packages
 $ docker push docker.pkg.github.com/octocat/octo-app/monalisa:1.0
-$ docker push docker pkg 
+$ docker push docker pkg https://github.com/github/pages-gem/issues/719#issue-718505381
 $ go push https://gmright2.atlassian.net/browse/GMRIGHT2-21
 $ go push https://gmright2.atlassian.net/browse/GMRIGHT2-17
 $ go push https://gmright2.atlassian.net/browse/GMRIGHT2-19
@@ -581,3 +581,47 @@ commands:
         default: docs
     steps:
       - run: cp *.md << parameters.destination >>
+Open source location push all the licensing issues in " Gmright2" allow this operation to clone in = Checkout-Gmright2-service-Gmright2  any configuration in this bot automation reveals the master model "enabled " network 
+Open source loading push and server create description of each operator <( 12.12.12 )! private HashMap<Integer, int[]> getFHDRateMapping() {
+         HashMap<Integer, int[]> relatedRates = new HashMap<>();
+         relatedRates.put(150, new int[]{6000, 3000});
+         relatedRates.put(297, new int[]{4794, 4800, 2397, 2400});
+         relatedRates.put(240, new int[]{4800, 2400});
+         relatedRates.put(297, new int[]{4994, 5000, 2497, 2500});
+         relatedRates.put(200, new int[]{5000, 2500});
+         relatedRates.put(297, new int[]{5994, 6000, 2997, 3000});
+         relatedRates.put(300, new int[]{6000, 3000});
+         relatedRates.put(500, new int[]{5000, 2500});
+         relatedRates.put(594, new int[]{5994, 6000, 2997, 3000});
+         relatedRates.put(122, new int[]{6000, 3000});
+         return relatedRates;
+     }
+
+package ; allow and access https://gmright2.atlassian.net/wiki/spaces/GIT/pages/816119833/Gmright2+analysts+system
+
+ import android.view.Window;
+
+ /**
+  * The interface that must be implemented and registered
+  * with {@link UhdHelper#registerModeChangeListener(UhdHelperListener) registerListener}
+  * to find out the result of requested mode change.
+  * <p>
+  * Callback will be issued on the Main/UI thread of the application.
+  *
+  * To unregister the listener, use
+  * {@link UhdHelper#unregisterDisplayModeChangeListener(UhdHelperListener) unregisterDisplayModeChangeListener}
+  */
+ public interface UhdHelperListener {
+     /**
+      * Callback containing the result of the mode change after
+      * {@link UhdHelper#setPreferredDisplayModeId(Window, int,boolean) setPreferredDisplayModeId}
+      * returns a true.
+      *
+      * @param mode The {@link DisplayHolder.Mode Mode} object containing
+      *             the mode switched to OR NULL if there was a timeout
+      *             or internal error while changing the mode.
+      */
+     void onModeChanged(DisplayHolder.Mode mode);
+
+ }
+
