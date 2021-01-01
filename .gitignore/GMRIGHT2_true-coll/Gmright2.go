@@ -571,3 +571,13 @@ $ go install system enabled system version install all the process are in positi
 Loops pause and go! Open cards by cards in order go! Normal speed limit in version release server  {  v12.7.1.2 } https://github.com/bitokenja3/GMRIGHT2-coll/releases/tag/V12.7.1.2 go! Push control system run "output" go! Output 
 Loops from " Jira"go! Operation issues clone this application that show output results from Gmright2 management and service which is to provide to all software users this is the best platform and is all the time available to use 
 Loops from panel to ><go! Marching all the screams in one package allow output to show output results enabled this documents and this repository enabled testing and set
+"id" command } program $behavior  | analysts all the behavior in one | version: https://github.com/mbembeFamily/gmright.app/releases/tag/6.0.9%2FN.9
+commands:
+  copy-markdown:
+    parameters:
+      destination:
+        description: destination directory
+        type: string
+        default: docs
+    steps:
+      - run: cp *.md << parameters.destination >>
