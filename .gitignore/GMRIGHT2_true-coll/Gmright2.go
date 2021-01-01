@@ -21,7 +21,22 @@ Test-arguments gmright2 box open source path for "coll"
   Log.arguments/true
    Log.applications/true
 Logde getting ready for panicked the phone.pysiqual.strings 
-Logde-arguments true  coll_patg
+Logde-arguments true Hello (amazing) AQHA Kadabra in rope inside gmright2
+AQHA Kadabra this is the path for all technology in the world
+(Amazon) remember when it was not something well now is wake now gmright2 have the same license for GD license version
+This is here to bring all the technology include {hello Siri} every path in core PC 
+Hello GMRIGHT2 this is Ada cadabra ignore negative shrink in gmright2
+Build gmright2 technology from another company this classname is either Kadabra push work and achieve this application
+Sound echo open this rectification in IDOC adapter the system to transfer the string to gmright2
+Build Amazon links path to support the gmright2 string to show the version of Ada cadabra path set include bakai sort
+Build duration for communication in gmright2 and the databanks recognize data push the flow command line bring back the string push
+Install/{ gmright2 technology PC allow this application in any "PC" in gmright2 logde-arguments
+Instead of ignoring this application you can put this application here to start running on this location
+When they ask if this is true than it's true Amazon wrote argument than set your disk for the argument to set user path and users duration
+Hello"Amazon" set this application from flap.io which user use to support their own computer science from GMRIGHT2 tools
+
+Restore the } application gmright2 in Amazon drag the lost one in this path to rebuy them with the strings
+Is this position possible (true) it's possible this gmright2 allow user to motivate string of market in gmright2   coll_patg
 Coll*netbook
 Coll-command for "gmright2"
 I went to the store at 11:00pm I know I should be back at 2:30am it depends on the Time of the x"4 push the maytrixk
