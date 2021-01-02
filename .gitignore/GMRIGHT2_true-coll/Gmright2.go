@@ -636,7 +636,23 @@ package ; allow and access https://gmright2.atlassian.net/wiki/spaces/GIT/pages/
       *             the mode switched to OR NULL if there was a timeout
       *             or internal error while changing the mode.
       */
-     void onModeChanged(DisplayHolder.Mode mode);
+     void onModeChanged(DisplayHolder.Mode mode); require "soft/view"
+
+class ArticleView < Soft::View
+  config.paths = [File.join(__dir__, "templates")]
+  config.layout = "application"
+  config.template = "articles/show"
+
+  attr_reader :article_repo
+
+  def initialize(article_repo:)
+    @article_repo = article_repo
+  end
+
+  expose :article do |gmright2:|
+    article_repo.by_gmright2(Gmright2)
+  end
+end
 
  }
 
