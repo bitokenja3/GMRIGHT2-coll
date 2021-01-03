@@ -655,4 +655,7 @@ class ArticleView < Soft::View
 end
 
  }
-
+go!: in "Gmright2" open homepages 
+go!: in "Gmright2" open sourced: = https://github.com/gmright-service-gmright/gmright2.github.io-/releases/tag/V8.1.1.2
+go!: in "Gmright2" open market: place enabled source : https://github.com/gmright-service-gmright/gmright2.github.io-/releases/tag/V8.1.1.2
+go!: in "Gmright2" run! Service ["output"] source : https://github.com/gmright-service-gmright/gmright2.github.io-/releases/tag/V8.1.1.2
