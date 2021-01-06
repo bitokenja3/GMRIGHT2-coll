@@ -47,6 +47,19 @@ GMRIGHT2-be kind regards pro.profiles  coll book issue.core set in stone possibl
 GMRIGHT2'v.12 wrote license version 7.9 from GMRIGHT2 pc only commands
 Coll.strings - power.actions! true-energy
 Coll-netbook set" 7"
+
+"dependencies": {
+  "node-notifier": ">=8.0.1"
+"Source -dependencies" : secures morning and afternoon $gmright2.sicurity
+"dependencies " ("in Gmright2 - https://github.com/bitokenja3  secure api-address Gmright2.coll enabled to secure the system data enabled installation documents-security ")
+"dependencies" verdict > version : https://github.com/bitokenja3/gmright2.github.io-/releases/tag/78787 { 
+"dependencies" value > version : https://github.com/bitokenja3/gmright2.github.io-/releases/tag/V1.2.4 server security settings enabled 
+"dependencies" allow this practice to process in each application which is enabled in an article : "@gmright2"
+"dependencies" enactment :> https://github.com/bitokenja3/gmright2.github.io-/releases/tag/7.8.9 push source power up coll runs great 
+"dependencies" automation :> attack unknown network circle port/ push this location version _  https://github.com/bitokenja3/gmright2.github.io-/releases/tag/V.27.8
+"dependencies" slideshow :true" results set in pages which administrator push to create: https://github.com/bitokenja3/gmright2.github.io-/releases/tag/5.2.1
+gmright2 - command.line " @welcome "allow "dependencies " source input/output , run and open setting in this source of resources : https://github.com/bitokenja3/gmright2.github.io-/releases/tag/7.8.99
+gmright2 - controllable script by administrator or found and owner of this organization only enabled to engage input and output value/ true  - block /security / block /unblock/ change.log/ command.output / release.output / publish.output/ unpublished.output show value/ true run in this release: https://github.com/bitokenja3/gmright2.github.io-/releases/tag/V8.1.1.2
 $gmright2 logi kushinikiza mgomo katika gmright2 kwa kukusanya database kamili kutoka kwa mtumiaji we net -book _pro kuagiza jukwaa maelezo ya kazi msingi wa huduma ya simu - katika coll netbook kutoka GMRIGHT2ingia kabla na uingie kwenye sanduku la gmright2
  $gmright2-trings
 GMRIGHT2 core ignore windows set pro_road true
