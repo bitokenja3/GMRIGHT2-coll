@@ -672,3 +672,6 @@ go!: in "Gmright2" open homepages
 go!: in "Gmright2" open sourced: = https://github.com/gmright-service-gmright/gmright2.github.io-/releases/tag/V8.1.1.2
 go!: in "Gmright2" open market: place enabled source : https://github.com/gmright-service-gmright/gmright2.github.io-/releases/tag/V8.1.1.2
 go!: in "Gmright2" run! Service ["output"] source : https://github.com/gmright-service-gmright/gmright2.github.io-/releases/tag/V8.1.1.2
+"gmright2">go!run<(Public.config<>gmright2>;log/match((>port,communication-launch<[>Gmright2>webkit.server/https://github.com/gmright-service-gmright/gmright2.github.io-/pull/103 server/><issues-push-all/related/issue<location>gmright2[}run-via/blueberry/Bluetooth/install 
+"Gmright2"<go!run>(public.doman.config>;} this serves ip push back and front location <(Gmright2.automation)> run.installations after the process completed  [>] start by catch "(server"name~:Gmright2> https://github.com/bitokenja3/gmright2.github.io- ) compared lineup all the application in this one location by opening source loops 
+In loops[<€] Gmright2 [}> go.network  installation enabled in this application user download in Init mini.mobile check operation in each cores from this location to the begin<[,^!gmright2 [>{+Gmright2.rest =[ https://github.com/bitokenja3/gmright2.app.cloud - mini mobile platform enabled performance installation enabled 
