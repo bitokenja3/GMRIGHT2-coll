@@ -675,3 +675,92 @@ go!: in "Gmright2" run! Service ["output"] source : https://github.com/gmright-s
 "gmright2">go!run<(Public.config<>gmright2>;log/match((>port,communication-launch<[>Gmright2>webkit.server/https://github.com/gmright-service-gmright/gmright2.github.io-/pull/103 server/><issues-push-all/related/issue<location>gmright2[}run-via/blueberry/Bluetooth/install 
 "Gmright2"<go!run>(public.doman.config>;} this serves ip push back and front location <(Gmright2.automation)> run.installations after the process completed  [>] start by catch "(server"name~:Gmright2> https://github.com/bitokenja3/gmright2.github.io- ) compared lineup all the application in this one location by opening source loops 
 In loops[<€] Gmright2 [}> go.network  installation enabled in this application user download in Init mini.mobile check operation in each cores from this location to the begin<[,^!gmright2 [>{+Gmright2.rest =[ https://github.com/bitokenja3/gmright2.app.cloud - mini mobile platform enabled performance installation enabled 
+
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+    <packageSources>
+        <clear />
+        <add key="github" value="https://nuget.pkg.github.com/OWNER/index.json" />
+    </packageSources>
+    <packageSourceCredentials>
+        <github>
+            <add key="Username" value="USERNAME" />
+            <add key="ClearTextPassword" value="TOKEN" />
+        </github>
+    </packageSourceCredentials>
+</configuration>
+dotnet new console --name OctocatApp
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>OctocatApp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Octocat</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>This package adds an Octocat!</PackageDescription>
+    <RepositoryUrl>https://github.com/OWNER/REPOSITORY</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
+
+dotnet pack --configuration Release
+
+dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg" --source "github"
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>OctodogApp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Octodog</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>This package adds an Octodog!</PackageDescription>
+    <RepositoryUrl>https://github.com/octo-org/octo-cats-and-dogs</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>OctocatApp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Octocat</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>This package adds an Octocat!</PackageDescription>
+    <RepositoryUrl>https://github.com/octo-org/octo-cats-and-dogs</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <PackageId>OctocatApp</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Octocat</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>This package adds an Octocat!</PackageDescription>
+    <RepositoryUrl>https://github.com/OWNER/REPOSITORY</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OctokittenApp" Version="12.0.2" />
+  </ItemGroup>
+
+</Project>
+
+dotnet restore
+
+
+
+
