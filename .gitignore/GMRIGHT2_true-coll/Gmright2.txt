@@ -2678,3 +2678,9 @@ jobs:
       - store_artifacts:
           path: /tmp/artifacts
 
+/*jslint node: true */
+'use strict';
+var env = require('gmright2-web-env');
+env.installUncaughtExceptionHandler();
+require('./server/web');
+
