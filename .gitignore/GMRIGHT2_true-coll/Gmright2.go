@@ -758,7 +758,7 @@ dotnet nuget push "bin/Release/OctocatApp.1.0.0.nupkg" --source "github"
   </ItemGroup>
 
 </Project>
-
+Open red check open in blue check move on the side check be able to read user interface check source push links from Gmright2 push enabled sources software push " mastery"code push entry run in publishing practice location not in this location only in opening source %of feii hi macIam wkMk. (Gmright2-wrote-confuses source ) €['si;51' allow [>]€\*[#%]*]%~\
 dotnet restore
 
 
