@@ -1,3 +1,8 @@
+Gmright2 <[ z-1.7.2.7 ]> zone power up "code.wrote.gmright2" power dislodge enabled "welcome.gmright2" config panel sort command push public service network enabled performance ("run!") : "Gmright2"
+Gmright2 <[ 7.1.8 ]> https://github.com/Gmright2-zone/GMRIGHT2-coll/compare/7.8.1...master "welcome.gmright2" pipeline panel sort command push public service enabled installation ("run!) : "Gmright2"
+Gmright2 <[ 5.8 ]< command #124 commit source push repository (" https://github.com/bitokenja3 ")
+Gmright2 <[ first issues ]> power up " Gmright2 " /> server : (" https://github.com/Gmright2-coll/GMRIGHT2-coll/issues/1#issue-651007179 ")
+
 Head start running "hello world-true"  coll open user ID and password setting pool to start identify user computer location-true
 User minimum and limiting factor editing files true
 User start to edit-user profile-true "word-keybord-type/true" user edit "gmright2-coll-false"
