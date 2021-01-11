@@ -1,0 +1,4 @@
+# Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/bitokenja3/GMRIGHT2-coll --token AQEUF5K6S77TPKCHEA55PD277OY3E
+# Last step, run it!
+$ ./run.sh
