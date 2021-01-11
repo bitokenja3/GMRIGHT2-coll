@@ -762,5 +762,21 @@ Open red check open in blue check move on the side check be able to read user in
 dotnet restore
 
 
+config = Jekyll::Utils.deep_merge_hashes(DEFAULTS, site.config)
 
+  # Merge overwrites into user config
+  Jekyll::Utils.deep_merge_hashes! config, OVERRIDES
+
+  # Ensure we have those gems we want.
+  config["gems"] = Array(config["gems"]) | DEFAULT_GEMS
+
+  # Assign everything to the site
+  Jekyll::Utils.deep_merge_hashes! site.config, config
+
+  # Update any instance variables
+  site.config.each do |key, value|
+    site.public_send("#{key}=", value) if site.respond_to?("#{key}=")
+  # Gmright2 ("configurable"{Gmright2.json}") open value in this type 
+# Gmright2 "power" -> #{ Gmright2.site } in docx : https://github.com/bitokenja3/GMRIGHT2-coll/issues/42#issue-776177588
+# Gmright2 "power" -> #{ Gmright2.value } power repository output Gmright2.coll/Gmright2 
 
