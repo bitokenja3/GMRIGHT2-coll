@@ -3,6 +3,9 @@ Gmright2 <[ 7.1.8 ]> https://github.com/Gmright2-zone/GMRIGHT2-coll/compare/7.8.
 Gmright2 <[ 5.8 ]< command #124 commit source push repository (" https://github.com/bitokenja3 ")
 Gmright2 <[ first issues ]> power up " Gmright2 " /> server : (" https://github.com/Gmright2-coll/GMRIGHT2-coll/issues/1#issue-651007179 ")
 
+1
+# Use a package of configuration called an orb.orbs:  # Declare a dependency on the welcome-orb  welcome: circleci/welcome-orb@0.4.1# Orchestrate or schedule a set of jobsworkflows:  # Name the workflow "welcome"  welcome:    # Run the welcome/run job in its own containerversion: 2.1# Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
+
 Head start running "hello world-true"  coll open user ID and password setting pool to start identify user computer location-true
 User minimum and limiting factor editing files true
 User start to edit-user profile-true "word-keybord-type/true" user edit "gmright2-coll-false"
