@@ -1,0 +1,32 @@
+Build-agent version 1.0.48308-8a85a016 (2020-12-10T14:02:10+0000)
+Docker Engine Version: 19.03.13
+Kernel Version: Linux 5caadc996a4c 4.15.0-1077-aws #81-Ubuntu SMP Wed Jun 24 16:48:15 UTC 2020 x86_64 Linux
+Starting container circleci/welcome-config-image:0.2.1
+Warning: No authentication provided, using CircleCI credentials for pulls from Docker Hub.
+  image cache not found on this host, downloading circleci/welcome-config-image:0.2.1
+0.2.1: Pulling from circleci/welcome-config-image
+
+55d5a1d1: Pulling fs layer 
+80d00ae9: Pulling fs layer 
+b3117dca: Pulling fs layer 
+a19181b2: Pulling fs layer 
+7b2a5bcc: Pulling fs layer 
+12c70287: Pulling fs layer 
+476a61f2: Pulling fs layer 
+b8bac4a1: Pulling fs layer 
+1fe57472: Pulling fs layer 
+6b7d8150: Pulling fs layer 
+fb183e3c: Pulling fs layer 
+6fb76ed8: Pulling fs layer 
+eeb897b5: Pulling fs layer 
+4ffc9980: Pulling fs layer 
+af4bc9d2: Pulling fs layer 
+84943530: Pulling fs layer 
+3c2c32a5: Pulling fs layer 
+Digest: sha256:01f2ee2fe579522417f13d799707cb1896320377e6fbbc70cdb35dd1f4e2b32502kB/2.02kBBB
+Status: Downloaded newer image for circleci/welcome-config-image:0.2.1
+  pull stats: download 462.6MiB in 4.71s (98.21MiB/s), extract 462.5MiB in 9.466s (48.86MiB/s)
+  time to create container: 876ms
+  using image circleci/welcome-config-image@sha256:01f2ee2fe579522417f13d799707cb1896320377e6fbbc70cdb35dd1f4e2b325
+Time to upload agent and config: 665.811776ms
+Time to start containers: 1.059668192s
