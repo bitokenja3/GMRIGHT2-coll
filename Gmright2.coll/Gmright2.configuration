@@ -1,3 +1,5 @@
 # Create the runner and start the configuration experience
 $ ./config.sh --url https://github.com/Gmright2-coll --token AQEUF5O7GTAG73ECP3RIADTAPOLO4# Last step, run it!
 $ ./run.sh
+ AssertionError: expected 6 to equal 32
+    at Context.<anonymous> (test/test.js:18:26)
