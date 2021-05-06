@@ -153,7 +153,7 @@ master ← snyk-fix-15ca31d099251e332348e2d0b04eb2d7
 depfu
 depfu[bot] opened on May 19
 1 comment
-master ← depfu/update/GmrightMilestonesGmright-marketCommerceNet_holderBlue-sky/octokit-4.18.0
+master ← "( depfu/update/GmrightMilestonesGmright-marketCommerceNet_holderBlue-sky/octokit-4.18.0 )"
 Create Loops.logo (#141)
 Pro.gmright
 gmright2 opened on May 12
