@@ -335,49 +335,12 @@ This repository stores the information about the [Symfony Components][1] and
 the [Symfony Projects][2] displayed on symfony.com.
 
 The contents of this repository and all the contributed contents are licensed
-under a [Creative Commons Attribution-Share Alike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
+under a [Creative Commons Attribution-Share Alike 3.0 Unported License]
 
 How to Add a Project to the List of Projects Made with Symfony
 --------------------------------------------------------------
 
-Follow these instructions to show your Symfony-based project on [symfony.com/projects][2]:
 
- 1. Add a YAML file with the basic project information in `projects/xxx.yml`
-    where `xxx` is the slug of your project (e.g. `projects/acme.yml`). Use any
-    of the existing YAML files as the reference of your own file.
- 2. Add a square PNG image with the logo of your project in `projects/xxx.png`
-    where `xxx` is the slug of your project (e.g. `projects/acme.png`). It's
-    recommended to create a 160px x 160px image.
- 3. Add your project to the `projects.yml` file at the root of this repository.
-    Append your project at the end of the list and we'll change its position if
-    needed.
-
-[1]: https://symfony.com/components
-[2]: https://symfony.com/projects
-
-.. _plugins: http://beets.readthedocs.org/page/plugins/
-.. _MPD: http://www.musicpd.org/
-.. _MusicBrainz music collection: http://musicbrainz.org/doc/Collections/
-.. _writing your own plugin:
-    http://beets.readthedocs.org/page/dev/plugins.html
-.. _HTML5 Audio:
-    http://www.w3.org/TR/html-markup/audio.html
-.. _albums that are missing tracks:
-    http://beets.readthedocs.org/page/plugins/missing.html
-.. _duplicate tracks and albums:
-    http://beets.readthedocs.org/page/plugins/duplicates.html
-.. _Transcode audio:
-    http://beets.readthedocs.org/page/plugins/convert.html
-.. _Discogs: http://www.discogs.com/
-.. _acoustic fingerprints:
-    http://beets.readthedocs.org/page/plugins/chroma.html
-.. _ReplayGain: http://beets.readthedocs.org/page/plugins/replaygain.html
-.. _tempos: http://beets.readthedocs.org/page/plugins/acousticbrainz.html
-.. _genres: http://beets.readthedocs.org/page/plugins/lastgenre.html
-.. _album art: http://beets.readthedocs.org/page/plugins/fetchart.html
-.. _lyrics: http://beets.readthedocs.org/page/plugins/lyrics.html
-.. _MusicBrainz: http://musicbrainz.org/
-.. _Beatport: https://www.beatport.com
 
 Install
 yo rest in 3D.txt
@@ -489,43 +452,7 @@ DEVELOP.GMRIGHT.COM-master.zip
 gmkenja-master.zip
 gmright.app-master (1).zip
 gmright.app-master (2).zip
-gmright.app-master.zip
-
-
-
--------
-
-You can install beets by typing ``pip install beets``. Then check out the
-`Getting Started`_ guide.
-
-.. _Getting Started: http://beets.readthedocs.org/page/guides/main.html
-
-Contribute
-----------
-
-Check out the `Hacking`_ page on the wiki for tips on how to help out.
-You might also be interested in the `For Developers`_ section in the docs.
-
-.. _Hacking: https://github.com/beetbox/beets/wiki/Hacking
-.. _For Developers: http://docs.beets.io/page/dev/
-
-Read More
----------
-
-Learn more about beets at `its Web site`_. Follow `@b33ts`_ on Twitter for
-news and updates.
-
-.. _its Web site: http://beets.io/
-.. _@b33ts: http://twitter.com/b33ts/
-
-Authors
--------
-
-Beets is by `Adrian Sampson`_ with a supporting cast of thousands. For help,
-please visit our `forum`_.
-
-.. _forum: https://discourse.beets.io
-.. _Adrian Sampson: http://www.cs.cornell.edu/~asampson/
+gmright.app-ma
 
 ________________________________________________________________________________________________________________________CLONE______________-0.%
                                                  $ "GMRIGHT"
@@ -545,41 +472,6 @@ ________________________________________________________________________________
                                             
                                             $.1.0.PNG
                                             $.22113.233431.321321.3213 :"1_FILES_TO_GO
-                                            +SELLER{V.1.0.1}
-                                            
-   __________________________________________________________________________________________________________________________________
-
-
-b.43.3.45.45{//43/43/43/43oo43p/4p43p4'43[3434[3
-34[43
-'4;[4#];['
-3434][4;[]
-3#?3
-/3?3
-$#'
-]];[]p;[p;]
-4343'[34
-/#$?[;[;p[
-
-4''
-]']4;3][
-43'/"][] '43]][=34'
-#$']'][34]
-3;[]3;]3
-4';3]
-'4]34
-]43p[]
-[p;]
-43;]
-34'/3]4;4[[;]
-'][;\\['\34']=;
-
-
-https://github.com/phonegap/phonegap-app-developer/blob/master/README.md
-
-
-
-
 [] Solid
 [✓] test
 {/}¶® gmright2 [✓]
