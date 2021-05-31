@@ -1,0 +1,17 @@
+ Gmright2 Reverts ("welcome.orb") version v8.1.1.2
+ Gmright2 boost configuration assert: 1 + 1 == ×3.6
+ Gmright2 pipeline boost server dexter point assert : + 2 == 6.12
+# Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/Gmright2-coll --token AQEUF5O7GTAG73ECP3RIADTAPOLO4# Last step, run it!
+$ ./run.sh# Use a package of configuration called an orb.
+$ ./gmright2.sh release repository in output version " https://github.com/gmright-service-gmright/gmright2.github.io-/releases/tag/V8.1.1.2 "
+$ ./gmright2.pro commll =} 1 == 5 core links 4 == 6 + 1 gmright2.log link executor 3 == 3∆  var v8.1.1.2
+$ ./gmright2.ser commll =} 5 == 2 element pushback (value-formulation) true results all version value-commamd text issue com/gmright2 Reverts Enabled
+assert 2 == 3
+def test_answer():
+>       assert 1 + 1 == 3
+E       assert 2 == 3
+
+test_sample.py:2: AssertionError
+ AssertionError: expected 6 to equal 32
+    at Context.<anonymous> (test/test.js:18:26)

@@ -1,0 +1,23 @@
+    "{ Hello world } "
+          
+     Login : detail 
+Login : configuration
+Login : code 
+Login : source
+Login : Deployment setup
+Process Enabled running 100% ( hello world )
+Gmright2.log :  ( " Enabled " )
+Gmright2.config : ( " Enabled " )
+Gmright2.fix.issues : ( " Enabled " )
+Gmright2.deploy.jobs : ( " Enabled " )
+Gmright2.delete.jobs : ( " disable " )
+Gmright2.com.domain : ( " Enabled " )
+Gmright2.license.md : ( " Enabled " )
+Gmright2.delete.license : ( " disable " )
+Gmright2.run.repostory.output.version : ( " Enabled " )
+Gmright2.command.mirrow.raw.output.package :  ( " Enabled " )
+Gmright2.show.files.result.set.i.deploy.config : ( " Enabled " )
+Gmright2.install.publish.application.output.source.server : ( " Enabled " )
+Gmright2.intall.version.detail.condact.release.push.deploy.merger : ( " Enabled " )
+
+Gmright2 { `"config.toml source ( "welcome" )

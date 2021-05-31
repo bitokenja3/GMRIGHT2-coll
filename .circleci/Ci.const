@@ -1,0 +1,13 @@
+const request = require('request');
+
+const options = {
+  method: 'GET',
+  url: 'https://circleci.com/api/v2/context/%7Bcontext-id%7D',
+  headers: {authorization: 'Basic REPLACE_BASIC_AUTH'}
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});

@@ -1,0 +1,79 @@
+Job started: 21 April 2021, 04:29:05
+Processed bitokenja3/docs from GitHub
+Found Gemfile.lock [main] View project
+Found package.json [main] View project
+Found content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ru-RU/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ko-KR/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found Dockerfile [main] View project
+Found translations/ja-JP/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/zh-CN/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/es-XL/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/de-DE/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+10 projects created
+Processed bitokenja3/gmright2-platform from GitHub
+Found api/Dockerfile [master] View project
+Found docker/dev-tls/Dockerfile [master] View project
+Found api/composer.lock [master] View project
+Found client/package.json [master] Out of sync package.json and yarn.lock detected. Please run "yarn install" and try again. More info
+Found admin/package.json [master]
+Found api/helm/api/Chart.yaml [master] Failed to process file api/helm/api/Chart.yaml More info
+Found client/Dockerfile [master] View project
+Found admin/Dockerfile [master] View project
+5 projects created
+Processed bitokenja3/gatsby from GitHub
+Found package.json [master] View project
+1 project created
+Processed bitokenja3/marketing from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/nuxtjs from GitHub
+Found package.json [master] View project
+1 project created
+Processed bitokenja3/gmright2.github.io- from GitHub
+Found Gmright/Milestones/MiniTerm.csproj [.NETFramework,Version=v4.7.2] [master] View project
+Found Gmright/Milestones/Gmright-market/Commerce/package.json [master] View project
+Found Gmright/Milestones/Gmright-market/Commerce/Net_holder/Blue-sky/Gemfile.lock [master] View project
+Found Gmright/ColorTool.csproj [net46] [master] View project
+Found Gmright-system/requirements.txt [master] View project
+5 projects created
+Processed bitokenja3/SmartYouTubeTV from GitHub
+Found smartyoutubetv/package.json [main-branch] View project
+Found browser/build.gradle [main-branch] View project
+Found common/build.gradle [main-branch] View project
+Found smartyoutubetv/build.gradle [main-branch] View project
+Found exoplayer-extension-vp9/build.gradle [main-branch] View project
+Found build.gradle [main-branch] View project
+Found exoplayeractivity/build.gradle [main-branch] View project
+7 projects created
+Processed bitokenja3/jekyll from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/nuevo from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/http-kernel from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.io from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.app.cloud from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2-Coller from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright.app from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/explore from GitHub
+Found Gemfile.lock [master] View project
+1 project created
+Processed bitokenja3/GMRIGHT2-coll from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/DEVELOP.GMRIGHT.COM from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Job completed: 21 April 2021, 04:32:13

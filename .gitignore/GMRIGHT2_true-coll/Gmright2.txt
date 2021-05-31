@@ -1,4 +1,13 @@
-<head>
+
+commands:
+  sayhello:
+    description: "A very simple command for demonstration purposes"
+    parameters:
+      to:
+        type: string
+        default: "Hello World"
+    steps:
+      - run: echo << parameters.to >>
 
 <details>
 <summary>
@@ -75,6 +84,139 @@ Ask road-password true this it will only happens when user log out or log in tru
 GMRIGHT2 Starr cooking tools true-energy
 GMRIGHT2 operation coll setting ignore windows and jukyll true
 Ignore jukyll-permition true set GMRIGHT2 operation coll setting start running gmright2 open pool possible for us to meet and start full communication true
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ubuntu:14.04
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+      - image: mongo:2.6.8
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+        command: [mongod, --smallfiles]
+
+      - image: postgres:9.4.1
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+        # some containers require setting environment variables
+        environment:
+          POSTGRES_USER: root
+
+      - image: redis@sha256:54057dd7e125ca41afe526a877e8bd35ec2cdd33b9217e022ed37bdcf7d09673
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+      - image: rabbitmq:3.5.4
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    environment:
+      TEST_REPORTS: /tmp/test-reports
+
+    working_directory: ~/my-project
+
+    steps:
+      - checkout
+
+      - run:
+          command: echo 127.0.0.1 devhost | sudo tee -a /etc/hosts
+
+      # Create Postgres users and database
+      # Note the YAML heredoc '|' for nicer formatting
+      - run: |
+          sudo -u root createuser -h localhost --superuser ubuntu &&
+          sudo createdb -h localhost test_db
+
+      - restore_cache:
+          keys:
+            - v1-my-project-{{ checksum "project.clj" }}
+            - v1-my-project-
+
+      - run:
+          environment:
+            SSH_TARGET: "localhost"
+            TEST_ENV: "linux"
+          command: |
+            set -xu
+            mkdir -p ${TEST_REPORTS}
+            run-tests.sh
+            cp out/tests/*.xml ${TEST_REPORTS}
+
+      - run: |
+          set -xu
+          mkdir -p /tmp/artifacts
+          create_jars.sh ${CIRCLE_BUILD_NUM}
+          cp *.jar /tmp/artifacts
+
+      - save_cache:
+          key: v1-my-project-{{ checksum "project.clj" }}
+          paths:
+            - ~/.m2
+
+      # Save artifacts
+      - store_artifacts:
+          path: /tmp/artifacts
+          destination: build
+
+      # Upload test results
+      - store_test_results:
+          path: /tmp/test-reports
+
+  deploy-stage:
+    docker:
+      - image: ubuntu:14.04
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    working_directory: /tmp/my-project
+    steps:
+      - run:
+          name: Deploy if tests pass and branch is Staging
+          command: ansible-playbook site.yml -i staging
+
+  deploy-prod:
+    docker:
+      - image: ubuntu:14.04
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    working_directory: /tmp/my-project
+    steps:
+      - run:
+          name: Deploy if tests pass and branch is Master
+          command: ansible-playbook site.yml -i production
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - develop
+                - /feature-.*/
+      - deploy-stage:
+          requires:
+            - build
+          filters:
+            branches:
+              only: staging
+      - deploy-prod:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
 --------------
 | s-1 == a-1|
 | der </ vol|
@@ -112,6 +254,42 @@ Coll.http-user! editing-false
 Coll-run outside"GMRIGHT2"false
 Coll-netbook-set user data.true
 Coll-command _spin data.graphic.output/true-energy
+
+Using build environment variables:
+  BASH_ENV=/tmp/.bash_env-5fe944bc61dcd2567b566505-0-build
+  CI=true
+  CIRCLECI=true
+  CIRCLE_BRANCH=revert-40-revert-35-master
+  CIRCLE_BUILD_NUM=108
+  CIRCLE_BUILD_URL=https://circleci.com/gh/bitokenja3/GMRIGHT2-coll/108
+  CIRCLE_COMPARE_URL=
+  CIRCLE_JOB=welcome/run
+  CIRCLE_NODE_INDEX=0
+  CIRCLE_NODE_TOTAL=1
+  CIRCLE_PREVIOUS_BUILD_NUM=107
+  CIRCLE_PROJECT_REPONAME=GMRIGHT2-coll
+  CIRCLE_PROJECT_USERNAME=bitokenja3
+  CIRCLE_PULL_REQUEST=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+  CIRCLE_PULL_REQUESTS=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+  CIRCLE_REPOSITORY_URL=git@github.com:bitokenja3/GMRIGHT2-coll.git
+  CIRCLE_SHA1=f2e41ec3371090257bdfdf0897ce35d81c0e4052
+  CIRCLE_SHELL_ENV=/tmp/.bash_env-5fe944bc61dcd2567b566505-0-build
+  CIRCLE_STAGE=welcome/run
+  CIRCLE_USERNAME=bitokenja3
+  CIRCLE_WORKFLOW_ID=adb7b37f-df6a-4f39-8999-48b2444db868
+  CIRCLE_WORKFLOW_JOB_ID=585831ce-0957-4133-bb12-90df27bd3c37
+  CIRCLE_WORKFLOW_UPSTREAM_JOB_IDS=
+  CIRCLE_WORKFLOW_WORKSPACE_ID=adb7b37f-df6a-4f39-8999-48b2444db868
+  CIRCLE_WORKING_DIRECTORY=~/project
+  CI_PULL_REQUEST=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+  CI_PULL_REQUESTS=https://github.com/bitokenja3/GMRIGHT2-coll/pull/41
+
+Using environment variables from project settings and/or contexts:
+  CIRCLE_JOB=**REDACTED**
+  SLACK_WEBHOOK=**REDACTED**
+
+The redacted variables listed above will be masked in run step output.
+
 C:/programming-communications start running "gmright2"tools output
 C-wrote : GMRIGHT2.controll successful installed-true
 C-wrote : gmright2.controll tools successful installed-true
@@ -138,6 +316,21 @@ GMRIGHT2- wrote warm up files in "(self storage unit)" [true]
 GMRIGHT2- wrote coll setting-arguments path in {self storage} gmright2 [true]
    Administration-in gmright2 is able to set this application roof and Root [true]
 Administration-gmright2 wrote only admin have the permission to set this "self storage unit"[true]
+
+version: 2.1
+executors:
+  my-executor:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+jobs:
+  my-job:
+    executor: my-executor
+    steps:
+      - run: echo outside the executor
 
 [-7.0]+[0.2]/[5.1]
 0+9=[5.1]5+3
@@ -266,6 +459,29 @@ Convert } version : [5.8.1.1] gmright2.coll-output.strings
 Convert } version : [1.6.6.3] gmright2.coll-output.strings
 Convert } license version: [7.9] true
 
+version: 2.1
+
+jobs:
+  bar:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          command: echo "building"
+      - run:
+          command: echo "testing"
+
+workflows:
+  build:
+    jobs:
+      - bar:
+          pre-steps: # steps to run before steps defined in the job bar
+            - run:
+                command: echo "install custom dependency"
+          post-steps: # steps to run after steps defined in the job bar
+            - run:
+                command: echo "upload artifact to s3"
+
  Gmright2 wrote convert this files before you upload in the future.coll because of the files string is low this files can not be able to inter here ;" if this files is not convert
 Gmright2 wrote application convert.hiz.string from this version string setting [1.1.0.3]∆log operation coll make sure this files is not a robot true set of it's a robot call this convert version [0.1.3.2] and set argument between robot and gmright2 logde-arguments
 Gmright2 wrote self storage unit set this convert files here 
@@ -349,6 +565,14 @@ authentication_token:
     methods: ['POST']
 
 _var gmright2 step in separate between both side of world this one set here and the other one set there if this and that met than the computer gmright2 technology is stable
+
+workflows:
+  my-workflow:
+      when:
+        or:
+          - equal: [ master, << pipeline.git.branch >> ]
+          - equal: [ staging, << pipeline.git.branch >> ]
+
 <?php
 // features/bootstrap/FeatureContext.php
 
@@ -382,7 +606,26 @@ class FeatureContext implements Context, SnippetAcceptingContext
         $this->restContext = $scope->getEnvironment()->getContext(RestContext::class);
         $this->restContext->iAddHeaderEqualTo('Authorization', "Bearer $token");
     }
-  
+  workflows:
+  workflow:
+    jobs:
+      - build:
+          name: build-v0.1
+          version: 0.1
+      - build:
+          name: build-v0.2
+          version: 0.2
+      - deploy:
+          name: deploy-v0.1
+          version: 0.1
+          requires:
+            - build-v0.1
+      - deploy:
+          name: deploy-v0.2
+          version: 0.2
+          requires:
+            - build-v0.2
+
     /**
      * @AfterScenario
      * @logout
@@ -406,7 +649,18 @@ class FeatureContext implements Context, SnippetAcceptingContext
 ___+gmright2 logde-arguments  fix the problem :
 [-7.0]+[0.2]/[5.1]
 0+9=[5.1]5+3
-5-8=2-4
+5-8=2.4 
+workflows:
+  my-workflow:
+    when:
+      and:
+        - not:
+            equal: [ master, << pipeline.git.branch >> ]
+        - or:
+            - equal: [ canary, << pipeline.git.tag >> ]
+            - << pipeline.parameters.deploy-canary >>
+
+
 3+4=[-7.0]
 10-3=(+7)
 If this program fix than write down "(gmright2 technology fixed this program)"
@@ -525,6 +779,43 @@ Doc > )} 12'8π×r=×/law:+2(2<2)=π
                       Doc > )} 71÷2=2(2<2)
                       Doc > )} 6π÷4=2
                        Doc > )}  ³/²π+6
+
+version: 2.1
+
+executors:
+  linux-13:
+    docker:
+      - image: cimg/node:13.13
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+  macos: &macos-executor
+    macos:
+      xcode: 11.4
+
+jobs:
+  test:
+    parameters:
+      os:
+        type: executor
+      node-version:
+        type: string
+    executor: << parameters.os >>
+    steps:
+      - checkout
+      - when:
+          condition:
+            equal: [ *macos-executor, << parameters.os >> ]
+          steps:
+            - run: echo << parameters.node-version >>
+      - run: echo 0
+
+workflows:
+  all-tests:
+    jobs:
+      - test:
+          os: macos
+          node-version: "13.13.0"
 
 Plat only be able to allow does with full function in this application block root straight
 Plat only pass source of code in this application block : program combination "true"
@@ -755,6 +1046,7 @@ He was so happy to hear that but still flap.io was talking with his echo on and 
 The change of this work application was made in gmright2 PC command for the support and secure all the users and administration information private this is because we really care about our users we treat everyone here like family
 This is because in gmright2 is home of everyone and we care about your personal information , we may ask everyone who are working in gmright2 to provide their information with administration or email bitokenja3@gmail.com for work application {[data_sheet]} this is only "enable" via or in administration-gmright2 _platform or application if the is not any source of provide information in this condition the will not be any source of information would be given to unkwow use who haven't been approved to use gmright2 this is really important thing to keep in mind that everything here is privacy in order to keep all our tools safety and does user who decided to join gmright2 by submitting the agreement between user and gmright2 
 In that case gmright2 would only allowed does who have the eternity (permission)to use GMRIGHT2 in this application plat-docx
+
           {
          
 
@@ -2099,27 +2391,296 @@ Gmright2-pro /Gmright212/core/mobile/windows/maintenance
 This is Gmright2 policy about Qi.informations in the [ QI.GMRIGHT2] user is Enable to post they public information but not they person information because QI.gmright2 take all the data security and we want to secure all your private information that's why we decided to make some of the pages private for public users 
 This is why QI.gmright2 is here to help user with their ability to keep information and to show all the data user wish to show in public 
 
-Dock packing private spaceship user intelligence tools boxing reroute public profile command - chain source in Gmright2 by combination of each (words) code  Gmright2 wrote @welcome to Gmright2 (true) crash base initiative check point interface push .;Gmright2 platform - server open sit operation in stable network platform (yes) allow this product: " here " editors name check profile allow png change model "true" operation in running allow change "true"
-User limite - book in networking opportunities open opportunities user opportunity boot network command network private networking user in private model check command (yes) allow user in private model to operate in public service check (yes) ";c-communication operation trafficking nodes model create quarterly data information about how to create new projects and post check 
-User cv- 11.110 / cv- 33.11 / cv- 51.10 / cv- 10.1 / cv- 12.10 / cv- 55.00 / cv- 66.10 / cv- 71.99 / cv- 77.12 / cv- 71.88 / cv- 90.11 / cv- 41.30 / cv- 1.2 / cv- 7.12 / cv- 1.0 / cv- 33.44 / cv- 77.2 / cv- 22.11 / cv- 23.1 / cv- 88.2 / cv- 37.12 / cv- 1.11 / cv- 00.11 / cv- 14.1 / cv- 52.2 / cv- 6.6 / cv- 33.45 / 
-Gmright2: (1)8.1 bakai-open - action allow automatic runners files operation to achieve and active 100% in correctly stand -open "Gmright2 platform " in bakai  allow running files or fault files to be removed or released , create a change by creating new application or files check "bakai" the original files check is correct "check " correct push correct location correct answer core correct }> change between in context "Enabled" language English 
-Gmright2: (2)7.1 bakai-run - action allow assistance to operate initiative "yes" limited running speed 100% in seconds disk in cloud storage operation "start_running"@gmright2
-Managing customer data is now about understanding your customers and their goals and how business can best address those needs and gain a competitive edge.
+Below are some important notes on upgrading to GMRIGHT2  4.4.4.4 For details of the new features and improvements in this release, please read the 
 
-Starting a series of articles on topics related with managing customer data, I will first focus on how managing customer data can improve the customer life cycle, how managing data can help to understand the customer’s journey and drive business across the customer life cycle stages.
+@orb check : path check source of this path check start : treatment - orbital operation check (yes) allow orb to performance in (Gmright2) correct allow 
+@orb check : Gmright2 composition in process pipeline projects running speed 100% percent running faster 200% percent more minutes each per milestone 
 
-Most organizations capture customer data through different tools and systems. Managing this data is a challenge, either due to the volume of customers or to constantly evolving personal and transactional information. Enforcing that this data must be managed to maintain its quality and enable it for future uses.
+version: '2.1'
+orbs:
+  orb-tools: circleci/orb-tools@10
+  your-orb: your-namespace/your-orb@<<pipeline.parameters.dev-orb-version>>
+jobs:
+  integration-tests-for-your-orb:
+    executor: orb-tools/ubuntu
+    steps:
+      - checkout
+workflows:
+  integration-test_deploy:
+    jobs:
+      - integration-tests-for-your-orb
+      - orb-tools/dev-promote-prod-from-commit-subject:
+          add-pr-comment: false
+          fail-if-semver-not-indicated: false
+          filters:
+            branches:
+              only: master
+          orb-name: your-namespace/your-orb
+          publish-version-tag: false
+          requires:
+            - integration-tests-for-your-orb
+    when: << pipeline.parameters.run-integration-tests >>
+  test-pack:
+    jobs:
+      - orb-tools/lint
+      - orb-tools/pack
+      - orb-tools/publish-dev:
+          orb-name: your-namespace/your-orb-name
+          requires:
+            - orb-tools/lint
+            - orb-tools/pack
+      - orb-tools/trigger-integration-tests-workflow:
+          name: trigger-integration-dev
+          requires:
+            - orb-tools/publish-dev
+    unless: << pipeline.parameters.run-integration-tests >>
 
-Effective customer data management will enable the organizations to increase its sales, to increase the efficiency of its business processes and to ensure compliance and data security by enabling the generation of reliable customer insights.
+Knobhub (1.1)! Open pages Corresponding material (word) allow user to create in coll by "!Gmright2 "
+Knobhub (1.2)! Open pages in correct order if "COLL" said (1.3) move the (1.2)! In front native circle and sign here " @gmright2.log "
+Knobhub (1.3)! Open check the existence of number # { 1.3 } which it made the native calculation to check from normal spot to the exchange of settings in place by " @gmright2.log "
+Knobhub (1.2)! Open the application with the issue number #24 "Gmright2.log"
 
-Customer data, being at the core of the business process has the potential to enable the identification of behaviour patterns, to identify the customer tendencies and detect significant changes and to create the perspective of “market of one” in the customer relationship.
+Downloaded: # Create a folder
+$ mkdir actions-runner && cd actions-runner
+# Download the latest runner package
+$ curl -O -L https://github.com/actions/runner/releases/download/v2.275.0/actions-runner-linux-x64-2.275.0.tar.gz
+# Extract the installer
+$ tar xzf ./actions-runner-linux-x64-2.275.0.tar.gz
+   
+Configuration: # Create the runner and start the configuration experience
+$ ./config.sh --url https://github.com/bitokenja3/GMRIGHT2-coll --token AQEUF5PSBUKVEHWD3O2GDNS73P2P4
+# Last step, run it!
+$ ./run.sh
 
-Effectively managed customer data can have a significant impact on achieving the objectives on each of these three types of customer engagement stages:
+Self-host: # Use this YAML in your workflow file for each job
+runs-on: self-hosted
 
-"( 12.1.00/Gmright2 } > Gmright2." Gmright2 "  fork - log / log-Gmright2 / server.server.platform ) >  temp € >  log.platform / enabled testing and server - htt-net / Gmright2 box / login_gmright2 )> wall-map 
-Tune in bot set log open map mode open box - house / ttps lt-Gmright2 / login / Gmright2-login / ff-12 / system- mood / enabled / server-> Gmright2 / operation.mood / enabled / network.mood / enabled performance login/ user data enabled installation in the administrator " workspace "
-Tune in bot set "Gmright2" positive energy mood open /"(Gmright2)" platform / bar - logon / collection / system- mood / enabled / server-> Gmright2 / operation.mood /
-Gmright2.json / crashing day open source fix : "Gmright2.json" c.c.gmright2
-Commit change push output results enabled source fix : "Gmright2.package" show output line 
-Command/ file:///codacy/.gitignore/GMRIGHT2_true-coll/Gmright2.json  /'fix /'codecy/'Gmright2/value line 
-Command/ file:///codacy/.gitignore/GMRIGHT2_true-coll/Gmright2.json server security settings set allow this port change fix!!!!
+
+}Beware of dog -open mainstream media in check (7.1.) clone games check blockbuster - uncheck blockbuster 
+Dog food feed" dog " limit of food plate/plate is one  this mean the dog is hungry to eat but not the owner only unknown transpassing in gmright2
+Beware of dog "Gmright2"command - code.lines  - fork this application in any "gmright2 technology application " true 
+Beware of dog 11.11 build wall true the is dog running in gmright2 commit this allows dog to check who is coming by the foot and by the car the dog understand who belong here and who don't belong here
+JavaScript >confirm user in gmright2-coll beware of dog the dog- in position  be is (taven) look taven dog name 
+This dog is wake all the time so beware of the dog -food feed dog (1.2.1) to ignore it ; to eat parents is not an option and <dog >contributes your benefits into gmright2
+This dog is color check build and set argument between dog and system build wall dog or belongs inside gmright2 technology (true) 
+Beware of dog merged this source into dog don't vanish set in action and true only action to act my dog gmright2 said this dog is being here for to long and I love this dog
+Dog that never die this"dog" Never leave ranks gate (64.1) this place keep eyes open look who is coming and who is going out dog path when parents are not home check and look who is coming in and out recognize when something is not right dog 
+Dog smell human being true this version of smells cv- port settings- words  it doesn't belong here automatic build your own smell to keep everything safe ignore meat form outside ignore this because is not from gmright2 it doesn't mean if they wrote [this is gmright2]
+Dog location is here to support and keep safe gmright2 technology the dog  Never vanish wall keeper  in this location " Gmright2 "  dog wrote #91737292727262827 from zone # on zone system
+Dog attack unkwow (00.00.00.01) " code.line " that's not from here dog location area set in run "true"
+Dog in FTH.dog build source of your string
+Dog.stop struggles check rotation of each scrimmage and allow running speed to operate 
+If the is unlocked leave a trail to confirm parents that  someone else (unkwow.codes) energy enter in here the set the fixing Pall
+# api/config/packages/security.yaml
+
+Gmright2 open pro in < program center > Gmright2 - fork (" https://github.com/Gmright2-com/gmright2- ")  run this repository in automation { value } enabled check speed running normal 
+Open source of pro command in this repository location check push and create new path if the { value } change enabled allow user to check 
+Command/ true -files communication between auto fact Gmright2 Deployment (#31)
+Command/ line 1 Gmright2.coll <bar> Gmright2 Deployment (#31) To create new path after all the process completed 
+Command/ line 2 CI allow <bar> Gmright2 Deployment (#31) Delivery the true affect in output log { value #Df123 } Gmright2.login 
+Command/ line 3 bucket allow <bar> in Gmright2 reviled physical data in graphic Gmright2 wrote functional { value #Df132 } Gmright2.login 
+Command/ line 4 bucket allow <bar> show output results physical coll after the collective bargaining and completed { value #Df2121 } Gmright2.login 
+Command/ line 5 bucket open <bar> newspapers.log enabled newspapers enabled running show output formation "true" formation is enabled testing and provide results in public model projects 
+Command/ line 6 bucket open <bar> guide this information and mark secure extension cord enabled pages each application process "Gmright2_ extension " core { value #Df5262 } Gmright2.login 
+Command/ line 7 bucket operation in < bar > install show output results enabled to showcase open files slideshow.configuration enabled running output versions 
+Command/ line 8 bucket operator activity run main system version "CI" here with Gmright2- copy " gh pr checkout 8 " create road map into Gmright2 core note and all the location in source marching sources { value Df18291 }
+Command/ line 9 bucket.Qa quality service open power in this "coll" location allow links to clone this application yes yes any links is enabled to clone output of this application source including does user create { value Df1932 } 
+Command/ line 10 shift operation setting map change the center point of data information or pages into coll formation check and create box for user to check in data change source of this data [ check { 12 - coll application €{ value } mobilizations operation clone this application process and projects show output graphic formulas check yes 
+Gmright2.platform.root network circle port platform : line 11 bytes  open Gmright2.root >} Gmright2.net source [" server "] : classname " Gmright2 " about committing report "( issues)" log internet push server  [ check { 13 - coll application €{ value }  platforms portable string.log  process projects loops-book "netbook" formulating [ Enabled ] value " network " 
+Gmright2.platform.root network circle port platform : line 12 bytes  "Gmright2" root notebooks source marker '!package' trucker platform -open card - zone open card zoom open card loops open card create post <https><Gmright2.org> Enabled running port <value>  query enabled performance login.md source first command center created loops [ Enabled ] value " network "
+Gmright2.platform.root network circle port platform : line 13 bytes  "Gmright2" root notepad source marker ! ' Package' truecker all the energy card - zone open card zoom open card.js loops packages create post <https><Gmright2.org> enabled running port < value > query enabled performance login.md source terminal data center created coll [ Enabled ] value " network "
+Gmright2.platform.root network circle port platform : line 14 bytes  "Gmright2" root notebooks source marker ! ' package '  trucker install repo card - zone run card repository running settings in cloud settings install <https><Gmright2.org> enabled running port < value > query enabled performance login- wrote Gmright2 create new incoming [ Enabled ] value " network "
+Gmright2.platform.root network circle port platform : line 15 bytes  "Gmright2" root Gmright2 server waken was wake operation install and start running - zone location " Gmright2 " open loops in cloud settings install <https><Gmright2.org> enabled running port < value > query enabled performance login- wrote Gmright2 public users enabled to {[ post ]} here , user value " network service "
+Gmright2.platform.root network circle port platform : line 16 bytes  "Gmright2" root Gmright2 server marker pools data code from [" https://github.com/bitokenja3/gmright2.github.io-/tree/master/Gmright-pool-system "] install enabled performance running port strings < value > server child_id (true) child_id enabled to set in this "cloud" perfect [{ physical version}] open "server value " 
+Gmright2.platform.root network circle port platform : line 17 bytes  "Gmright2" root Gmright2 server delivery service "Gmright2" network server Enabled to operate source push notifications- c:/program start to " @Analyzing " running scrimmage files and 3D.config push in package name "@GMRIGHT2" child_id enabled to set running in normal speed , over speed limit (false) installment complete } open setting } enabled value server Gmright2 
+Gmright2.platform.root network circle port platform : line 18 bytes  "Gmright2" root Gmright2 server child location start (ready-control panel ) Enabled ready user data in physical communication between data from inside and data from outside Enabled to ready conform administrator this data is enabled to ready or fix and change the settings design version enabled/disable fork this application open setting map with Gmright2-command-g [" https://github.com/bitokenja3/gmright2.github.io-/tree/master/Gmright-pool-system/Command-g "] value server Gmright2 
+Gmright2.platform.root network circle port platform : line 19 bytes  "Gmright2" root Gmright2 server administrator pool and server path [" https://github.com/gmright-service-gmright/gmright2.github.io-/tree/master/Gmright-system "] control command root enabled to perform this action - Gmright2 interfacing speed check loop.log enabled setting communication between data enabled from this files enabled to operate this application <value> query enabled performance login Gmright2 application enabled to run! Enabled installation is in correct path open [" https://github.com/bitokenja3/gmright2.github.io-/tree/circleci-project-setup "] enabled clone this server command " Gmright2 " enabled 
+Welcome to Gmright2 : open path here and start using Gmright2 technology the hub platform it will be able to perform better control panel for this application tools in any source of data bar the control panel is allowing user error data enabled testing the system in this data location is enabled to open in any any packages with this location permission administrator or owner all information mast remains private this is to protect organization users information or in privacy settings and to does files that's public only mast remains public user is enabled to post in public and in private model yes allow user to create new account or login with the "Gmright2.login@" APIs- APIs command wake up run this APIs " georgemwasafi@gmail.com " APIs Enabled to connect automation authority by @GeorgeMakulu
+Welcome to Gmright2 : in the map hub Gmright2 location in profile of this course ( "Gmright2" ) : profiles-show Enabled performance show output results in version [" https://github.com/bitokenja3/gmright2.github.io-/releases/tag/V.27.8 "] system " gate " supported enabled installation communication between COLL > Command enabled performance turn on " loops@ " version enabled running system application in this version [" https://github.com/bitokenja3/gmright2.app.cloud/releases/tag/6.0.9%2FN.9 "] version installed in this txt enabled running program.configuration text " welcome " network service "Gmright2" connected " Gmright2 " hub in Gmright2 cloud in this source links version [" https://github.com/bitokenja3/gmright2.app.cloud/releases/tag/7.92.102.11 "] server enabled to connect run in project https://github.com/bitokenja3/GMRIGHT2-coll/projects/1#column-12177239 
+Gmright2 to Gmright2 : in load network users install operator installation enabled running network circle platform-! Gmright2 (network)! Netbook  panel - zone card - network circle [<Gmright2>] Network net hub / cloud / serve txt / enabled testing - / enabled circle port / cloud service network / network-slide / cv.12 / install app/ duration during the process / programming application process enabled access in any locations available/ secure  
+Job started: 26 December 2020, 13:30:04
+Processed bitokenja3/docs from GitHub
+Found Gemfile.lock [main] View project
+Found translations/de-DE/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/zh-CN/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ko-KR/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ja-JP/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/es-XL/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found translations/ru-RU/content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+Found Dockerfile [main] View project
+Found package.json [main] View project
+Found content/actions/creating-actions/dockerfile-support-for-github-actions.md [main] View project
+10 projects created
+Processed bitokenja3/gmright2-platform from GitHub
+Found api/Dockerfile [master] View project
+Found client/package.json [master] View project
+Found api/composer.lock [master] View project
+Found admin/Dockerfile [master] View project
+Found api/helm/api/Chart.yaml [master] Failed to process file api/helm/api/Chart.yaml More info
+Found client/Dockerfile [master] View project
+Found docker/dev-tls/Dockerfile [master] View project
+Found admin/package.json [master] View project
+7 projects created
+Processed bitokenja3/marketing from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.github.io- from GitHub
+Found Gmright/ColorTool.csproj [net46] [master] View project
+Found Gmright/Milestones/MiniTerm.csproj [.NETFramework,Version=v4.7.2] [master] View project
+Found Gmright/Milestones/Gmright-market/Commerce/Net_holder/Blue-sky/Gemfile.lock [master] View project
+Found Gmright/Milestones/Gmright-market/Commerce/package.json [master] View project
+Found Gmright-system/requirements.txt [master] View project
+5 projects created
+Processed bitokenja3/SmartYouTubeTV from GitHub
+Found smartyoutubetv/package.json [main-branch] View project
+Found build.gradle [main-branch] View project
+Found exoplayeractivity/build.gradle [main-branch] View project
+Found common/build.gradle [main-branch] View project
+Found browser/build.gradle [main-branch] View project
+Found exoplayer-extension-vp9/build.gradle [main-branch] View project
+Found smartyoutubetv/build.gradle [main-branch] View project
+7 projects created
+Processed bitokenja3/jekyll from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/nuevo from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/http-kernel from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.io from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright2.app.cloud from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/GMRIGHT2-coll from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/gmright.app from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Processed bitokenja3/explore from GitHub
+Found Gemfile.lock [master] View project
+1 project created
+Processed bitokenja3/DEVELOP.GMRIGHT.COM from GitHub
+- No supported target files detected. Please see our documentation for supported languages and target files.
+0 projects created
+Job completed: 26 December 2020, 13:32:39
+-DevOps ',> Gmright2  -DevOps configurable "true" - DevOps -operator energy management application process check this application process enabled running port in >} "DevOps"
+-DevOps ',> Gmright2  - coll wrote devOps -controllable enables operator sort match data function combine output results and push back to build input results in the stable network service 
+-DevOps ',> Gmright2  - platform server accepted this requirement "true" operator instructions function data enabled performance push output value from front cloud service network enabled push results output 
+-DevOps ',> Gmright2  - bucketloads server fork ip-address georgemwasafi@gmail.com - set email private model "true" value [< private value >] true server service run port in this source value : " ,Gmright2, "
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub push this version enabled- clone this application process pin public service 
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub push  this documents enabled- clone the system repository pin public service 
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub push and create new hub for users - enabled network start running league platform service server (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub create doc output value$ Gmright2 / network service slide plat set in this software location run! (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub shine look output play value$ Gmright2-script Enabled scope read script - lines enabled run perfect speed (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play one and save or delete one play 2 save or delete 2 play 3 save or delete 3 play 4 save or delete 4 runs #free running (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play Gmright2 - files enabled play in studio enabled play in cloud enabled play in CI enabled play in command enabled running  (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play Gmright2 server enabled play core enabled play launch enabled play DSK Enabled play scrolls enabled play panel enabled running  (True)
+https://www.gmright.org*.python.run.c.1.2.2/enabled operator link hub play bucket enabled play root enabled play loops enabled play flap.io enabled play fork enabled play version command enabled running (True)
+
+name: ci
+
+on:
+  push:
+
+jobs:
+  Gmright2:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Set up Gmright2 
+        id: Gmright2 
+        uses: docker/setup-Gmright2-action@v1
+        with:
+          image: coll/png :latest
+          platforms: all
+      -
+        name: Available platforms
+        run: echo ${{ steps.gmright2.outputs.platforms }}
+
+Build-agent version 1.0.48635-2552da21 (2020-12-18T12:43:48+0000)
+Docker Engine Version: 19.03.13
+Kernel Version: Linux bc2725c7a076 4.15.0-1077-aws #81-Ubuntu SMP Wed Jun 24 16:48:15 UTC 2020 x86_64 Linux
+Starting container circleci/welcome-config-image:0.2.1
+Warning: No authentication provided, using CircleCI credentials for pulls from Docker Hub.
+  image is cached as circleci/welcome-config-image:0.2.1, but refreshing...
+0.2.1: Pulling from circleci/welcome-config-image
+Digest: sha256:01f2ee2fe579522417f13d799707cb1896320377e6fbbc70cdb35dd1f4e2b325
+Status: Image is up to date for circleci/welcome-config-image:0.2.1
+  pull stats: N/A
+  time to create container: 109ms
+  using image circleci/welcome-config-image@sha256:01f2ee2fe579522417f13d799707cb1896320377e6fbbc70cdb35dd1f4e2b325
+Time to upload agent and config: 1.237301553s
+Time to start containers: 1.666800676s
+
+Build-agent version 1.0.48635-2552da21 (2020-12-18T12:43:48+0000)
+Docker Engine Version: 19.03.13
+Kernel Version: Linux f20d60dccd6c 4.15.0-1077-aws #81-Ubuntu SMP Wed Jun 24 16:48:15 UTC 2020 x86_64 Linux
+Starting container circleci/welcome-config-image:0.2.1
+Warning: No authentication provided, using CircleCI credentials for pulls from Docker Hub.
+  image cache not found on this host, downloading circleci/welcome-config-image:0.2.1
+0.2.1: Pulling from circleci/welcome-config-image
+
+55d5a1d1: Already exists 
+80d00ae9: Already exists 
+b3117dca: Already exists 
+a19181b2: Already exists 
+7b2a5bcc: Already exists 
+12c70287: Already exists 
+476a61f2: Already exists 
+b8bac4a1: Already exists 
+1fe57472: Already exists 
+6b7d8150: Already exists 
+fb183e3c: Already exists 
+6fb76ed8: Already exists 
+eeb897b5: Already exists 
+4ffc9980: Already exists 
+af4bc9d2: Already exists 
+84943530: Already exists 
+3c2c32a5: Already exists 
+Digest: sha256:01f2ee2fe579522417f13d799707cb1896320377e6fbbc70cdb35dd1f4e2b32502kB/2.02kBB
+Status: Downloaded newer image for circleci/welcome-config-image:0.2.1
+  pull stats: download 0B in 0s (0B/s), extract 0B in 105ms (0B/s)
+  time to create container: 116ms
+  using image circleci/welcome-config-image@sha256:01f2ee2fe579522417f13d799707cb1896320377e6fbbc70cdb35dd1f4e2b325
+Time to upload agent and config: 697.439005ms
+Time to start containers: 1.211135141s
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: python:3.6.3-jessie
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+
+    working_directory: /tmp
+    steps:
+      - run:
+          name: Creating Dummy Artifacts
+          command: |
+            echo "my artifact file" > /tmp/artifact-1;
+            mkdir /tmp/artifacts;
+            echo "my artifact files in a dir" > /tmp/artifacts/artifact-2;
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: artifact-file
+
+      - store_artifacts:
+          path: /tmp/artifacts
+
+/*jslint node: true */
+'use strict';
+var env = require('gmright2-web-env');
+env.installUncaughtExceptionHandler();
+require('./server/web');
+

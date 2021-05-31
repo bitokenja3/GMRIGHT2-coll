@@ -1,0 +1,2 @@
+<add key="git@Local" value="https://pkgs.dev.azure.com/gmright-1/Gmright/_packaging/git%40Local/nuget/v3/index.json" />
+nuget.exe restore
