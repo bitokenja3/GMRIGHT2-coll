@@ -1,0 +1,4 @@
+book :> book :> book :> book :> book :> book :> book :> ["run!!,org environment"]
+book-ev :> book-io :> book-gmright2 :> book-raw :> book-json :> book-root :> ["gmright2-coll"]
+book-mark :> book-view :> book-home :> book-setting :> book-open :> book-library :> ["run!!,org pipeline"]
+book-projects :> book-workflow :> book-ci :> book-circle-setup-project :> book-push in the ["master"] ^1.0.0
